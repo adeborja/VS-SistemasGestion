@@ -17,10 +17,10 @@
         @using (Html.BeginForm("Editar", "Home", FormMethod.Post))
         {
             <p>ID persona:</p>
-            <input type="text" name="id" />
+            <input type="text" name="id" value="@Model.idPersona"/>
 
             <p>Nombre</p>
-            @Html.TextBox("nombre", "", new { @class = "form-control" });
+            @Html.TextBox("nombre", @Model.nombre, new { @class = "form-control" });
 
             <p>Apellidos</p>
             @Html.TextBoxFor(m => m.apellidos, new { @class = "form-control" });
@@ -33,7 +33,12 @@
 
             <p>Telefono</p>
             @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" });
-
+            <br/>
+            <br/>
+            <input type="submit" value="Enviar"/>
+            
+            <br/>
+            <p>nombre: @Model.nombre</p>
         }
 
     </div>

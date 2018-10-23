@@ -17,7 +17,7 @@ namespace _04_MandarDatosAlControlador_MVC.Controllers
         /// <returns>un objeto tipo clsPersona</returns>
         public ActionResult Editar()
         {
-            clsPersona p1 = new clsPersona(1, "Angel", "deBo", new DateTime(11/8/1987), "Calle Lejos", "123456789");
+            clsPersona p1 = new clsPersona(1, "Angel", "deBo", new DateTime(1987,8,11), "Calle Lejos", "123456789");
 
             return View(p1);
         }
@@ -31,8 +31,12 @@ namespace _04_MandarDatosAlControlador_MVC.Controllers
         public ActionResult Editar(clsPersona p)
         {
             //Investigar como llamar a otra vista y pasarle el objeto
+            //EditarViewModel model = new EditarViewModel();
 
-            return View();
+
+            //return View(p);
+
+            return RedirectToAction("vistaPersona", "Home", p);
         }
     }
 }

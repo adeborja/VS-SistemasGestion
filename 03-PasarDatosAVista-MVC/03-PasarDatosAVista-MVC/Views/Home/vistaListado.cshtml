@@ -1,0 +1,29 @@
+﻿@*@model _03_PasarDatosAVista_MVC.Models.clsListadoPersonas*@
+@model List<_03_PasarDatosAVista_MVC.Models.clsPersona>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>vistaListado</title>
+</head>
+<body>
+    <div>
+        @*@foreach(_03_PasarDatosAVista_MVC.Models.clsPersona persona in Model.getListado())*@
+        @foreach (_03_PasarDatosAVista_MVC.Models.clsPersona persona in Model)
+        {
+            //TO DO: falta por hacer que esten dentro de una tabla
+            <p>idPersona: @persona.idPersona</p>
+            <p>Nombre: @persona.nombre</p>
+            <p>Apellidos: @persona.apellidos</p>
+            <p>Fecha de nacimiento: @persona.fechaNacimiento</p>
+            <p>Direccion: @persona.direccion</p>
+            <p>Telefono: @persona.telefono</p><br/>
+        }
+    </div>
+</body>
+</html>
