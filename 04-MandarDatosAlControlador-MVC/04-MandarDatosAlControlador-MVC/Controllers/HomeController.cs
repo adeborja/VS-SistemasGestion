@@ -36,7 +36,8 @@ namespace _04_MandarDatosAlControlador_MVC.Controllers
 
             //return View(p);
 
-            return RedirectToAction("vistaPersona", "Home", p);
+            //return RedirectToAction("vistaPersona", "Home", p);
+            return View("vistaPersona", p);
         }
     }
 }

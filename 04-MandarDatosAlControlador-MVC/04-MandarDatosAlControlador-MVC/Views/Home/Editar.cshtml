@@ -14,31 +14,32 @@
 <body>
     <!--http://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor-->
     <div>
-        @using (Html.BeginForm("Editar", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Editar", "Home", FormMethod.Post))<!--, new { @class = "p1" }, si se pone esto no hace falta poner la clase en todos los textboxfor-->
         {
-            <p>ID persona:</p>
-            <input type="text" name="id" value="@Model.idPersona"/>
+        <p>ID persona:</p>
+        @*<input type="number" name="id" value="@Model.idPersona"/>*@
+        @Html.TextBoxFor(m => m.idPersona, new { @class = "form-control" });
 
-            <p>Nombre</p>
-            @Html.TextBox("nombre", @Model.nombre, new { @class = "form-control" });
+        <p>Nombre</p>
+        @Html.TextBox("nombre", @Model.nombre, new { @class = "form-control" });
 
-            <p>Apellidos</p>
-            @Html.TextBoxFor(m => m.apellidos, new { @class = "form-control" });
+        <p>Apellidos</p>
+        @Html.TextBoxFor(m => m.apellidos, new { @class = "form-control" });
 
-            <p>Fecha nacimiento</p>
-            @Html.TextBoxFor(m => m.fechaNacimiento, new { @class = "form-control" });
+        <p>Fecha nacimiento</p>
+        @Html.TextBoxFor(m => m.fechaNacimiento, new { @class = "form-control" });
 
-            <p>Direccion</p>
-            @Html.TextBoxFor(m => m.direccion, new { @class = "form-control" });
+        <p>Direccion</p>
+        @Html.TextBoxFor(m => m.direccion, new { @class = "form-control" });
 
-            <p>Telefono</p>
-            @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" });
-            <br/>
-            <br/>
-            <input type="submit" value="Enviar"/>
-            
-            <br/>
-            <p>nombre: @Model.nombre</p>
+        <p>Telefono</p>
+        @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" });
+        <br />
+        <br />
+        <input type="submit" value="Enviar" />
+
+        <br />
+        <p>nombre: @Model.nombre</p>
         }
 
     </div>

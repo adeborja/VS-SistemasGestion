@@ -1,0 +1,27 @@
+﻿@model _04_MandarDatosAlControlador_MVC.Models.clsPersonaConListaDeDepartamentos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>vistaPersona</title>
+</head>
+<body>
+    <div>
+        <p>idPersona: @Model.idPersona</p>
+        <p>Nombre: @Model.nombre</p>
+        <p>Apellidos: @Model.apellidos</p>
+        <p>Fecha de nacimiento: @Model.fechaNacimiento</p>
+        <p>Direccion: @Model.direccion</p>
+        <p>Telefono: @Model.telefono</p><br />
+        <p>idDepartamento: @Model.idDepartamento</p>
+
+        @Html.ActionLink("Volver atras", "Editar")
+    </div>
+</body>
+</html>
