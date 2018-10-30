@@ -1,4 +1,5 @@
-﻿@model _04_MandarDatosAlControlador_MVC.Models.clsPersonaConListaDeDepartamentos
+﻿@model _04_MandarDatosAlControlador_MVC.Models.ViewModels.clsPersonaConNombreDeDepartamento
+@*@model _04_MandarDatosAlControlador_MVC.Models.clsPersonaConListaDeDepartamentos*@
 
 @{
     Layout = null;
@@ -19,7 +20,8 @@
         <p>Fecha de nacimiento: @Model.fechaNacimiento</p>
         <p>Direccion: @Model.direccion</p>
         <p>Telefono: @Model.telefono</p><br />
-        <p>idDepartamento: @Model.idDepartamento</p>
+        @*<p>idDepartamento: @Model.idDepartamento</p>*@
+        <p>nombreDepartamento: @Model.nombreDepartamento</p>
 
         @Html.ActionLink("Volver atras", "Editar")
     </div>

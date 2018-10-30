@@ -14,37 +14,38 @@
 <body>
     <!--http://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor-->
     <div>
-        @using (Html.BeginForm("Editar", "Home", FormMethod.Post, new { @class = "p1" }))
-        {
-        <p>ID persona:</p>
-        @*<input type="number" name="id" value="@Model.idPersona"/>*@
-        @Html.TextBoxFor(m => m.idPersona);
+        @*@using (Html.BeginForm("Editar", "Home", FormMethod.Post, new { @class = "p1" }))
+        {*@
+        <form action="" method="post">
+            <p>ID persona:</p>
+            @*<input type="number" name="id" value="@Model.idPersona"/>*@
+            @Html.TextBoxFor(m => m.idPersona);
 
-        <p>Nombre</p>
-        @Html.TextBox("nombre", @Model.nombre);
+            <p>Nombre</p>
+            @Html.TextBox("nombre", @Model.nombre);
 
-        <p>Apellidos</p>
-        @Html.TextBoxFor(m => m.apellidos);
+            <p>Apellidos</p>
+            @Html.TextBoxFor(m => m.apellidos);
 
-        <p>Fecha nacimiento</p>
-        @Html.TextBoxFor(m => m.fechaNacimiento);
+            <p>Fecha nacimiento</p>
+            @Html.TextBoxFor(m => m.fechaNacimiento);
 
-        <p>Direccion</p>
-        @Html.TextBoxFor(m => m.direccion);
+            <p>Direccion</p>
+            @Html.TextBoxFor(m => m.direccion);
 
-        <p>Telefono</p>
-        @Html.TextBoxFor(m => m.telefono);
+            <p>Telefono</p>
+            @Html.TextBoxFor(m => m.telefono);
 
-        <p>Departamento</p>
-        @*@Html.TextBoxFor(m => m.idDepartamento)*@
-        @Html.DropDownListFor(m => m.listadoDepartamentos, new SelectList()
-        <br />
-        <br />
-        <input type="submit" value="Enviar" />
+            <p>Departamento</p>
+            @*<input type="hidden" name="idDepartamento" value="@Model.idDepartamento"/>*@
+            @*@Html.TextBoxFor(m => m.idDepartamento)*@
+            @Html.DropDownListFor(m => m.idDepartamento, new SelectList(Model.listadoDepartamentos, "idDepartamento", "nombreDepartamento"))
+            <br />
+            <br />
+            <input type="submit" value="Enviar" />
+        </form>
+        @*}*@
 
-        <br />
-        <p>nombre: @Model.nombre</p>
-        }
 
     </div>
 </body>
