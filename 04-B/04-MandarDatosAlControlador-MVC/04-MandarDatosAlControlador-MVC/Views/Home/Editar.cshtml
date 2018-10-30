@@ -14,9 +14,9 @@
 <body>
     <!--http://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor-->
     <div>
-        @*@using (Html.BeginForm("Editar", "Home", FormMethod.Post, new { @class = "p1" }))
-        {*@
-        <form action="" method="post">
+        @using (Html.BeginForm("Editar", "Home", FormMethod.Post, new { @class = "p1" }))
+        {
+        @*<form action="" method="post">*@
             <p>ID persona:</p>
             @*<input type="number" name="id" value="@Model.idPersona"/>*@
             @Html.TextBoxFor(m => m.idPersona);
@@ -43,8 +43,8 @@
             <br />
             <br />
             <input type="submit" value="Enviar" />
-        </form>
-        @*}*@
+        @*</form>*@
+        }
 
 
     </div>

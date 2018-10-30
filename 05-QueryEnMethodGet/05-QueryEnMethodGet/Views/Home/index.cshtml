@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index</title>
+</head>
+<body>
+    <div>
+        <!--Cosas que poner: nombre del metodo al que se llama para iniciar, nombre del controlador(sin "Controller"), method a utilizar-->
+        @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            @*<p>Nombre:</p>
+            <input name="Nombre" value="asd"/>*@
+        if((bool)ViewData["esMiPrimeraVez"])
+        {
+            <p>Es la primera vez que entras</p>
+        }
+        else
+        {
+            <p>No es la primera vez que entras</p>
+        }
+
+            @*<p>pinta @ViewData["esMiPrimeraVez"]</p>*@
+            <input type="hidden" name="esMiPrimeraVez" value="false" />
+
+            <input type="submit" value="Enviar" />
+        }
+    </div>
+</body>
+</html>
