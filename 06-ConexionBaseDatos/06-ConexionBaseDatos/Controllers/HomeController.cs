@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using _06_ConexionBaseDatos.Models.Entidades;
 
 namespace _06_ConexionBaseDatos.Models
 {
@@ -66,10 +67,15 @@ namespace _06_ConexionBaseDatos.Models
         {
             //Aqui va el ejercicio de lista de personas
 
+            IEnumerable<clsPersona> lista = new List<clsPersona>();
+
+            lista.Add(new clsPersona(0, "Angel David", "de Borja", new DateTime(1987, 8, 11), "Calle de mi casa X", "954459123", 1));
+            lista.Add(new clsPersona(1, "Menga", "Nito", new DateTime(1999, 9, 9), "Calle Falsa 9", "954999999", 2));
+            lista.Add(new clsPersona(2, "Pepe", "Pinazo", new DateTime(2001, 9, 11), "Calle Antigua s/n", "555-4785", 3));
 
 
 
-            return View();
+            return View(lista);
         }
     }
 }
