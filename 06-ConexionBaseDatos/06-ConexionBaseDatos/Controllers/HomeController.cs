@@ -23,7 +23,7 @@ namespace _06_ConexionBaseDatos.Models
 
             try
             {
-                miConexion.ConnectionString = "server=personaserver.database.windows.net;database=personasDB;uid=Prueba;pwd=123qweasd!;";
+                miConexion.ConnectionString = "server=personaserver.database.windows.net;database=personasDB;uid=prueba;pwd=123qweasd!;";
 
                 miConexion.Open();
 
