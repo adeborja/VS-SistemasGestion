@@ -29,6 +29,17 @@ namespace _07_CRUDPersonas_Entidades
             this.idDepartamento = nIdDepartamento;
         }
 
+        public clsPersona(String nNombre, String nApellido, DateTime nFechaNacimiento, String nDireccion, String nTelefono, int nIdDepartamento)
+        {
+            this.idPersona = -1;
+            this.nombre = nNombre;
+            this.apellidos = nApellido;
+            this.fechaNacimiento = nFechaNacimiento;
+            this.direccion = nDireccion;
+            this.telefono = nTelefono;
+            this.idDepartamento = nIdDepartamento;
+        }
+
         #endregion
 
 

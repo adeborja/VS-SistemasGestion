@@ -1,0 +1,9 @@
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-DAL.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-DAL.pdb
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-Entidades.pdb
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csprojAssemblyReference.cache
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csproj.CoreCompileInputs.cache
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csproj.CopyComplete
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.pdb
