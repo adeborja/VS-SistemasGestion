@@ -7,3 +7,12 @@ D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.dll
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Debug\07-CRUDPersonas-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.csproj.CopyComplete
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Debug\07-CRUDPersonas-DAL.pdb
