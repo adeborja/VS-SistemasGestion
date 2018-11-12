@@ -40,6 +40,17 @@ namespace _07_CRUDPersonas_Entidades
             this.idDepartamento = nIdDepartamento;
         }
 
+        public clsPersona(clsPersona oPersona)
+        {
+            this.idPersona = oPersona.idPersona;
+            this.nombre = oPersona.nombre;
+            this.apellidos = oPersona.apellidos;
+            this.fechaNacimiento = oPersona.fechaNacimiento;
+            this.direccion = oPersona.direccion;
+            this.telefono = oPersona.telefono;
+            this.idDepartamento = oPersona.idDepartamento;
+        }
+
         #endregion
 
 

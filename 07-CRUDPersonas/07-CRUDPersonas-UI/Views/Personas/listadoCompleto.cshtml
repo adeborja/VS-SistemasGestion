@@ -1,4 +1,4 @@
-﻿@model IEnumerable<_07_CRUDPersonas_Entidades.clsPersona>
+﻿@model IEnumerable<_07_CRUDPersonas_Entidades.clsPersonaConNombreDeDepartamento>
 
 @{
     Layout = null;
@@ -36,7 +36,8 @@
                 @Html.DisplayNameFor(model => model.telefono)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idDepartamento)
+                @Html.DisplayNameFor(model => model.nombreDepartamento)
+                
             </th>
             <th></th>
         </tr>
@@ -63,7 +64,7 @@
                     @Html.DisplayFor(modelItem => item.telefono)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.idDepartamento)
+                    @Html.DisplayFor(modelItem => item.nombreDepartamento)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.idPersona }) |

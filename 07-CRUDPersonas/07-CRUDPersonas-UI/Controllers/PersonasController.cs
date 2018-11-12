@@ -1,6 +1,7 @@
 ﻿using _07_CRUDPersonas_BL.Listados;
 using _07_CRUDPersonas_BL.Manejadoras;
 using _07_CRUDPersonas_Entidades;
+//using _07_CRUDPersonas_UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,16 @@ namespace _07_CRUDPersonas_UI.Controllers
         /// <returns></returns>
         public ActionResult listadoCompleto()
         {
-            clsListadoPersonas_BL manejadora = new clsListadoPersonas_BL();
-            List<clsPersona> listado = new List<clsPersona>();
+            //clsListadoPersonas_BL manejadora = new clsListadoPersonas_BL();
+            //List<clsPersona> listado = new List<clsPersona>();
+
+            clsListadoPersonasConNombreDeDepartamento_BL manejadora = new clsListadoPersonasConNombreDeDepartamento_BL();
+            List<clsPersonaConNombreDeDepartamento> listado = new List<clsPersonaConNombreDeDepartamento>();
 
             try //se pone porque vamos a abrir una conexion con la BD
             {
-                listado = manejadora.listadoCompletoPersonas_BL();
+                //listado = manejadora.listadoCompletoPersonas_BL();
+                listado = manejadora.listadoCompletoPersonasConNombreDeDepartamento();
             }
             catch(Exception)
             {

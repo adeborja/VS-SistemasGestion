@@ -6,7 +6,6 @@ D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Debug\07-CRUDPersonas-Entidades.pdb
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Debug\07-CRUDPersonas-Entidades.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Debug\07-CRUDPersonas-Entidades.pdb
-D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Debug\07-CRUDPersonas-Entidades.csprojAssemblyReference.cache
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Debug\07-CRUDPersonas-Entidades.csproj.CoreCompileInputs.cache
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Debug\07-CRUDPersonas-Entidades.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Debug\07-CRUDPersonas-Entidades.pdb
