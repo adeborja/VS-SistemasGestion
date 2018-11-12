@@ -1,0 +1,3 @@
+si el viewmodel clsPersonaConNombreDeDepartamento se pone en la capa UI, la capa BL no puede acceder a ella
+
+si el viewmodel clsPersonaConListaDeDepartamentos se pone en la capa Entidades, la clase no puede acceder a los metodos del la clase clsListadoDeDepartamentos para obtener el listado de apartamentos

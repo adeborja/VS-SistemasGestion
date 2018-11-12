@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace _07_CRUDPersonas_Entidades
+namespace _07_CRUDPersonas_Entidades.ViewModels
 {
     public class clsPersonaConNombreDeDepartamento : clsPersona
     {
@@ -32,6 +32,8 @@ namespace _07_CRUDPersonas_Entidades
             }
 
         }
+
+
 
         #endregion
 

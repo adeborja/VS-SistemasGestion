@@ -1,4 +1,5 @@
-﻿@model IEnumerable<_07_CRUDPersonas_Entidades.clsPersonaConNombreDeDepartamento>
+﻿@*@model IEnumerable<_07_CRUDPersonas_Entidades.clsPersonaConNombreDeDepartamento>*@
+@model IEnumerable<_07_CRUDPersonas_Entidades.ViewModels.clsPersonaConNombreDeDepartamento>
 
 @{
     Layout = null;
@@ -37,7 +38,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.nombreDepartamento)
-                
+
             </th>
             <th></th>
         </tr>

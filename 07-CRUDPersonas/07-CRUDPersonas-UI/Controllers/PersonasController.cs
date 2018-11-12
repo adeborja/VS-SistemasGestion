@@ -2,6 +2,7 @@
 using _07_CRUDPersonas_BL.Manejadoras;
 using _07_CRUDPersonas_Entidades;
 //using _07_CRUDPersonas_UI.ViewModels;
+using _07_CRUDPersonas_Entidades.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

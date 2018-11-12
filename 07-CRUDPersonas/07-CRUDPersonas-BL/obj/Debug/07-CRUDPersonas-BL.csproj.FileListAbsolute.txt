@@ -9,14 +9,14 @@ D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.dll
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csproj.CoreCompileInputs.cache
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-BL.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-BL.pdb
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-DAL.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-Entidades.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-DAL.pdb
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\bin\Debug\07-CRUDPersonas-Entidades.pdb
-D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csprojAssemblyReference.cache
-D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csproj.CoreCompileInputs.cache
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.csproj.CopyComplete
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.dll
 D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-BL\obj\Debug\07-CRUDPersonas-BL.pdb
