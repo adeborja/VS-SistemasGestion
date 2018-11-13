@@ -45,7 +45,6 @@
     <Compile Include="clsDepartamento.cs" />
     <Compile Include="clsPersona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\clsPersonaConListaDeDepartamentos.cs" />
     <Compile Include="ViewModels\clsPersonaConNombreDeDepartamento.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,0 +1,72 @@
+﻿@model _08_CRUDpersonasTelefonos_UI.Models.ViewModels.clsListadoPersonasPorDepartamentoYListadoDepartamentos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>listadoPersonas</title>
+</head>
+<body>
+    @*"listadoPersonas", "Personas", FormMethod.Post*@
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownListFor(x => Model.idDepartamentoSeleccionado, new SelectList(Model.listaDepartamentos, "idDepartamento", "nombreDepartamento"))
+
+        <br />
+
+        <input type="submit" />
+
+        <br />
+    }
+
+    @if (Model.listaPersonas.Count != 0)
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    NOMBRE
+                </th>
+                <th>
+                    APELLIDOS
+                </th>
+                <th>
+                    TELEFONO
+                </th>
+                <th>
+
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.listaPersonas)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apellidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefono)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Cambiar", "Cambiar", new { id = item.idPersona })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+
+
+</body>
+</html>
