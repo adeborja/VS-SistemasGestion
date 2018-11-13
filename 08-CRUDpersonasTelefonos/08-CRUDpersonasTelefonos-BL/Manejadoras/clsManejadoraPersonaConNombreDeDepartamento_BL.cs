@@ -10,14 +10,14 @@ namespace _08_CRUDpersonasTelefonos_BL.Manejadoras
     class clsManejadoraPersonaConNombreDeDepartamento_BL
     {
         
-        public clsPersona buscarPersonaConNombreDeDepartamentoPorID_BL(int id)
+        /*public clsPersona buscarPersonaConNombreDeDepartamentoPorID_BL(int id)
         {
             clsPersona persona = null;
 
 
 
             return persona;
-        }
+        }*/
         
     }
 }

@@ -9,3 +9,14 @@ D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelef
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.dll
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-BL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-BL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\bin\Debug\08-CRUDpersonasTelefonos-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.csproj.CopyComplete
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-BL\obj\Debug\08-CRUDpersonasTelefonos-BL.pdb

@@ -19,16 +19,18 @@
 
         <br />
 
-        <input type="submit" />
+        @*<input type="submit" />*@
+        <button name="btnEnviar" type="submit">Mostrar empleados</button>
 
         <br />
     }
 
-    @if (Model.listaPersonas.Count != 0)
+    @if (Model.listaPersonas.Count > 0)
     {
-        <p>
+        @*<p>
             @Html.ActionLink("Create New", "Create")
-        </p>
+        </p>*@
+        <br/>
         <table class="table">
             <tr>
                 <th>
@@ -59,7 +61,7 @@
                         @Html.DisplayFor(modelItem => item.telefono)
                     </td>
                     <td>
-                        @Html.ActionLink("Cambiar", "Cambiar", new { id = item.idPersona })
+                        @Html.ActionLink("Cambiar telefono", "CambiarTelefono", new { id = item.idPersona })
                     </td>
                 </tr>
             }

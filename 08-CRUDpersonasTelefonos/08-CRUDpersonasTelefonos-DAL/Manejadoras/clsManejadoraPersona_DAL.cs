@@ -238,6 +238,49 @@ namespace _08_CRUDpersonasTelefonos_DAL.Manejadoras
             return filasAfectadas;
         }
 
-        
+
+
+
+        public int editarTelefonoPersonaPorID_DAL(int id, String nTelefono)
+        {
+            int filasAfectadas = -1;
+
+            SqlConnection miConexion = null;
+            SqlCommand miComando = new SqlCommand();
+            clsMyConnection gestoraConexion = new clsMyConnection();
+
+
+            try //try no obligatorio porque lo controlamos en la clase myConnection
+            {
+                //Añadir los parametros necesarios para hacer la insercion
+                miComando.Parameters.Add("@idPersona", System.Data.SqlDbType.VarChar).Value = id;
+                miComando.Parameters.Add("@telefono", System.Data.SqlDbType.VarChar).Value = nTelefono;
+
+                //Obtener conexion abierta
+                miConexion = gestoraConexion.getConnection();
+
+
+                //Definir los parametros del comando
+                miComando.CommandText = "UPDATE Personas SET telefono=@telefono where idPersona=@idPersona";
+
+
+                //Definir la conexion
+                miComando.Connection = miConexion;
+
+                //Ejecutar la consulta
+                filasAfectadas = miComando.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                gestoraConexion.closeConnection(ref miConexion);
+            }
+
+            return filasAfectadas;
+        }
     }
 }

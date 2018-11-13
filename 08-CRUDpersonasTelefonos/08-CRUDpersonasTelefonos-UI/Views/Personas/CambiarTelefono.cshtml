@@ -1,0 +1,72 @@
+﻿@model _08_CRUDpersonasTelefonos_UI.Models.ViewModels.CambiarTelefonoViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CambiarTelefono</title>
+</head>
+<body>
+    <div>
+        <h4>clsPersonaConNombreDeDepartamento</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            @Html.HiddenFor(model => model.personaConNombreDeDepartamento.idPersona)
+            @Html.HiddenFor(model => model.personaConNombreDeDepartamento.fechaNacimiento)
+            @Html.HiddenFor(model => model.personaConNombreDeDepartamento.direccion)
+            @Html.HiddenFor(model => model.personaConNombreDeDepartamento.idDepartamento)
+
+            <dt>
+                @Html.DisplayNameFor(model => model.personaConNombreDeDepartamento.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.personaConNombreDeDepartamento.nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.personaConNombreDeDepartamento.apellidos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.personaConNombreDeDepartamento.apellidos)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.personaConNombreDeDepartamento.nombreDepartamento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.personaConNombreDeDepartamento.nombreDepartamento)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.personaConNombreDeDepartamento.telefono)
+            </dt>
+
+            <dd>
+                @Html.EditorFor(model => model.personaConNombreDeDepartamento.telefono)
+            </dd>
+
+
+
+        </dl>
+    </div>
+    <p>
+        <button type="submit" >GUARDAR</button>
+    </p>
+
+    <p>
+        @*@Html.ActionLink("Guardar", "CambiarTelefono", new { id = Model.personaConNombreDeDepartamento.idPersona }) |*@
+        @*@Html.ActionLink("Guardar", "CambiarTelefono", new { personaConNombreDeDepartamento = Model.personaConNombreDeDepartamento }) |*@
+        @Html.ActionLink("Guardar", "CambiarTelefono", new { id = Model.personaConNombreDeDepartamento.idPersona, telefono = Model.personaConNombreDeDepartamento.telefono }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

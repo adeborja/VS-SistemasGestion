@@ -12,6 +12,17 @@ namespace _08_CRUDpersonasTelefonos_UI.Models.ViewModels
     {
         #region constructor por defecto
 
+        public clsListadoPersonasPorDepartamentoYListadoDepartamentos()
+        {
+            //instanciar clases para obtener listas de la capa BL
+            clsListadoPersonas_BL listadoPersonas_BL = new clsListadoPersonas_BL();
+            clsListadoDepartamentos_BL listadoDepartamentos = new clsListadoDepartamentos_BL();
+
+            this.listaPersonas = new List<clsPersona>();
+            this.listaDepartamentos = listadoDepartamentos.listadoCompletoDepartamentos_BL();
+            idDepartamentoSeleccionado = -1;
+        }
+
         public clsListadoPersonasPorDepartamentoYListadoDepartamentos(int idDepartamento)
         {
             //instanciar clases para obtener listas de la capa BL

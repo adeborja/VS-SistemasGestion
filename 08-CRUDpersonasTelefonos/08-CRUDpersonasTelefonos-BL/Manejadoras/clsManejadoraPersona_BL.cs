@@ -67,5 +67,19 @@ namespace _08_CRUDpersonasTelefonos_BL.Manejadoras
 
             return filasAfectadas;
         }
+
+
+
+        public int editarTelefonoPersonaPorID_BL(int id, String nTelefono)
+        {
+            int filasAfectadas = -1;
+
+            clsManejadoraPersona_DAL manejadora_DAL = new clsManejadoraPersona_DAL();
+
+            filasAfectadas = manejadora_DAL.editarTelefonoPersonaPorID_DAL(id, nTelefono);
+
+
+            return filasAfectadas;
+        }
     }
 }

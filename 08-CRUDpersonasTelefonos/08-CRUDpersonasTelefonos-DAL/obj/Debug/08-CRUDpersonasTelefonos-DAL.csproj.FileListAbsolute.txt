@@ -7,3 +7,12 @@ D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelef
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.dll
 D:\Github Angel\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\bin\Debug\08-CRUDpersonasTelefonos-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\bin\Debug\08-CRUDpersonasTelefonos-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\bin\Debug\08-CRUDpersonasTelefonos-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\bin\Debug\08-CRUDpersonasTelefonos-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.csproj.CopyComplete
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\08-CRUDpersonasTelefonos\08-CRUDpersonasTelefonos-DAL\obj\Debug\08-CRUDpersonasTelefonos-DAL.pdb
