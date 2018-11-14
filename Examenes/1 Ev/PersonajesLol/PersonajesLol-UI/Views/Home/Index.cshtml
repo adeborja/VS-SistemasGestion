@@ -1,0 +1,141 @@
+﻿@model PersonajesLol_UI.Models.ViewModels.clsViewModelIndex
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownListFor(x => Model.personajeSeleccionado.idPersonaje, new SelectList(Model.listadoPersonajes, "idPersonaje", "nombre"));
+
+        <p>
+            <input type="submit" name="btnEdit" value="Editar" />
+        </p>
+
+
+    }
+
+    @if (Model.personajeSeleccionado.idPersonaje > 0)
+    {
+        using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+        {
+            <p>
+                <img src=@ViewData["rutaImagenPersonaje"]>
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.idPersonaje):
+                @Html.HiddenFor(model => model.personajeSeleccionado.idPersonaje)
+            </p>
+
+            <p>
+                @Html.DisplayFor(model => model.personajeSeleccionado.idPersonaje)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.nombre):
+                @Html.HiddenFor(model => model.personajeSeleccionado.nombre)
+            </p>
+
+            <p>
+                @Html.DisplayFor(model => model.personajeSeleccionado.nombre)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.alias):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.alias)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.vida):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.vida)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.regeneracion):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.regeneracion)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.danno):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.danno)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.armadura):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.armadura)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.velAtaque):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.velAtaque)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.resistencia):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.resistencia)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.velMovimiento):
+            </p>
+
+            <p>
+                @Html.EditorFor(model => model.personajeSeleccionado.velMovimiento)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.personajeSeleccionado.idCategoria):
+            </p>
+
+            <p>
+                @*@Html.EditorFor(model => model.personajeSeleccionado.idCategoria)*@
+                @Html.DropDownListFor(x => Model.personajeSeleccionado.idCategoria, new SelectList(Model.listadoCategorias, "idCategoria", "nombreCategoria"))
+            </p>
+
+            <p>
+                <input type = "submit" name = "btnGuardar" value = "Guardar" /> Aqui al pulsar el boton se deberia llamar al metodo Edit del controlador Home, pero no esta funcional, aunque el metodo en sí está terminado
+
+
+                 </p>
+
+
+
+                 <p>
+                     @ViewData["resultadoOperacion"]
+                 </p>
+
+        }
+    }
+
+    </body>
+</html>

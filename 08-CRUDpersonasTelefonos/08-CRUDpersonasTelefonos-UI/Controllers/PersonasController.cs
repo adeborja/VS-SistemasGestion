@@ -46,7 +46,7 @@ namespace _08_CRUDpersonasTelefonos_UI.Controllers
             //Llamada para obtener los datos de la persona seleccionada. Crear un viewmodel que reciba un objeto persona con nombre de departamento
             CambiarTelefonoViewModel persona = new CambiarTelefonoViewModel(id);
 
-            ViewData["mensajeAlGuardar"] = "PUTA MIERDA";
+            ViewData["mensajeAlGuardar"] = "TEXTO DE PRUEBA";
 
             //Pasar la lista a la vista de cambiar telefono
             return View("CambiarTelefono", persona);
@@ -54,12 +54,14 @@ namespace _08_CRUDpersonasTelefonos_UI.Controllers
         
 
         [HttpPost, ActionName("CambiarTelefono")]
-        public ActionResult CambiarTelefonoPost(int id, String telefono) //clsPersonaConNombreDeDepartamento CambiarTelefonoViewModel
+        public ActionResult CambiarTelefonoPost(CambiarTelefonoViewModel objeto) //clsPersonaConNombreDeDepartamento CambiarTelefonoViewModel
         {
-            /*int filasAfectadas = -1;
+            int filasAfectadas = -1;
             clsManejadoraPersona_BL manejadora_BL = new clsManejadoraPersona_BL();
 
             filasAfectadas = manejadora_BL.editarTelefonoPersonaPorID_BL(objeto.personaConNombreDeDepartamento.idPersona, objeto.personaConNombreDeDepartamento.telefono);
+
+            //CambiarTelefonoViewModel persona = new CambiarTelefonoViewModel(objeto.personaConNombreDeDepartamento.idPersona);
 
             if (filasAfectadas != 1)
             {
@@ -68,9 +70,28 @@ namespace _08_CRUDpersonasTelefonos_UI.Controllers
             else
             {
                 ViewData["mensajeAlGuardar"] = "Se ha guardado el telefono correctamente";
-            }*/
+            }
 
-            return View();
+            return View(objeto);
+        }
+
+
+
+        public ActionResult regresoTablaConIdDepartamento(CambiarTelefonoViewModel objeto)
+        {
+            clsListadoPersonas_BL listadoPersonas_BL = new clsListadoPersonas_BL();
+            clsListadoPersonasPorDepartamentoYListadoDepartamentos lista = null;
+
+            try
+            {
+                lista = new clsListadoPersonasPorDepartamentoYListadoDepartamentos(objeto.personaConNombreDeDepartamento.idDepartamento);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return View("listadoPersonas", lista);
         }
 
     }

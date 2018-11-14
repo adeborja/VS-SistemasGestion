@@ -19,6 +19,23 @@ namespace _08_CRUDpersonasTelefonos_UI.Models.ViewModels
 
         #endregion
 
+        #region constructor por defecto
+
+        public CambiarTelefonoViewModel()
+        {
+            //instanciar elementos para llamar a la capa BL
+            clsListadoDepartamentos_BL listadoDepartamentos_BL = new clsListadoDepartamentos_BL();
+            clsManejadoraPersona_BL manejadoraPersona_BL = new clsManejadoraPersona_BL();
+
+            //Asignar valores a las variables
+            clsPersona persona = new clsPersona();
+            List<clsDepartamento> listaDepartamentos = listadoDepartamentos_BL.listadoCompletoDepartamentos_BL();
+            personaConNombreDeDepartamento = new clsPersonaConNombreDeDepartamento(persona, listaDepartamentos);
+        }
+
+
+        #endregion
+
         #region constructor por parametro
 
         public CambiarTelefonoViewModel(int id)

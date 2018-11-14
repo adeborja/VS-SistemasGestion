@@ -1,0 +1,11 @@
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-BL.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-BL.pdb
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-DAL.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-DAL.pdb
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\bin\Debug\PersonajesLol-Entidades.pdb
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\obj\Debug\PersonajesLol-BL.csprojAssemblyReference.cache
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\obj\Debug\PersonajesLol-BL.csproj.CoreCompileInputs.cache
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\obj\Debug\PersonajesLol-BL.csproj.CopyComplete
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\obj\Debug\PersonajesLol-BL.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-BL\obj\Debug\PersonajesLol-BL.pdb

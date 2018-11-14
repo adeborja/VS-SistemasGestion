@@ -1,0 +1,6 @@
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\bin\Debug\PersonajesLol-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\bin\Debug\PersonajesLol-Entidades.pdb
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\obj\Debug\PersonajesLol-Entidades.csprojAssemblyReference.cache
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\obj\Debug\PersonajesLol-Entidades.csproj.CoreCompileInputs.cache
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\obj\Debug\PersonajesLol-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\Examenes\1 Ev\PersonajesLol\PersonajesLol-Entidades\obj\Debug\PersonajesLol-Entidades.pdb
