@@ -20,7 +20,7 @@ namespace _07_CRUDPersonas_UI.ViewModels
 
         #region constructor por parametros
 
-        public clsPersonaConListaDeDepartamentos(int nIdPersona, String nNombre, String nApellido, DateTime nFechaNacimiento,
+        /*public clsPersonaConListaDeDepartamentos(int nIdPersona, String nNombre, String nApellido, DateTime nFechaNacimiento,
                                                     String nDireccion, String nTelefono, int nIdDepartamento) //, List<clsDepartamento> nLista
                                                     : base(nIdPersona, nNombre, nApellido, nFechaNacimiento,
                                                     nDireccion, nTelefono, nIdDepartamento)
@@ -28,9 +28,12 @@ namespace _07_CRUDPersonas_UI.ViewModels
             //this.listadoDepartamentos = nLista;
 
             //instancia un objeto tipo clsListadoDeDepartamentos y lo inicializa con la lista recibida
+            //clsListadoDeDepartamentos listado = new clsListadoDeDepartamentos();
+            //listadoDepartamentos = listado.listadoCompletoDepartamentos(); //cambiar a atributo recibido
+
             clsListadoDeDepartamentos listado = new clsListadoDeDepartamentos();
             listadoDepartamentos = listado.listadoCompletoDepartamentos(); //cambiar a atributo recibido
-        }
+        }*/
 
         #endregion
 
