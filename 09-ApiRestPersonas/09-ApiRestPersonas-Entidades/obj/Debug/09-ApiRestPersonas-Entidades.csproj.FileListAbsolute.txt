@@ -1,0 +1,6 @@
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\bin\Debug\09-ApiRestPersonas-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\bin\Debug\09-ApiRestPersonas-Entidades.pdb
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Debug\09-ApiRestPersonas-Entidades.csprojAssemblyReference.cache
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Debug\09-ApiRestPersonas-Entidades.csproj.CoreCompileInputs.cache
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Debug\09-ApiRestPersonas-Entidades.dll
+D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Debug\09-ApiRestPersonas-Entidades.pdb
