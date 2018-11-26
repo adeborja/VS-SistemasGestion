@@ -108,6 +108,7 @@
     <Content Include="Views\Personas\Create.cshtml" />
     <Content Include="Views\Personas\Edit.cshtml" />
     <Content Include="Views\Personas\Details.cshtml" />
+    <None Include="Properties\PublishProfiles\AngelCRUDPersonas - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

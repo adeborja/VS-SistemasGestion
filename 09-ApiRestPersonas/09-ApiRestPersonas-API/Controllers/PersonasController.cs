@@ -40,12 +40,25 @@ namespace _09_ApiRestPersonas_API.Controllers
         /// </summary>
         /// <param name="oPersona"></param>
         /// <returns></returns>
-        public int Post(clsPersona oPersona)
+        public int Post([FromBody]clsPersona oPersona)
         {
             clsManejadoraPersona_BL manejadoraPersonas_BL = new clsManejadoraPersona_BL();
             int filasAfectadas = manejadoraPersonas_BL.crearPersona_BL(oPersona);
             return filasAfectadas;
         }
+        
+        /// <summary>
+        /// Verbo 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int Delete(int id)
+        {
+            clsManejadoraPersona_BL manejadoraPersonas_BL = new clsManejadoraPersona_BL();
+            int filasAfectadas = manejadoraPersonas_BL.borrarPersonaPorID_BL(id);
+            return filasAfectadas;
+        }
+
 
 
         
