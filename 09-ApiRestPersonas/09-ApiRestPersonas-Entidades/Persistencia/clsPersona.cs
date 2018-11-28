@@ -56,7 +56,9 @@ namespace _09_ApiRestPersonas_Entidades.Persistencia
 
         #region atributos y propiedades
 
+        //oculto
         public int idPersona { get; set; }
+        //[Required(ErrorMessage="El campo nombre es obligatorio")]
         public String nombre { get; set; }
         public String apellidos { get; set; }
         public DateTime fechaNacimiento { get; set; }

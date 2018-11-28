@@ -119,20 +119,28 @@ namespace _07_CRUDPersonas_UI.Controllers
             clsListadoPersonas_BL listadoBL = new clsListadoPersonas_BL();
             List<clsPersona> lista = new List<clsPersona>();
 
-            try
+            if(!ModelState.IsValid)
             {
-                filasAfectadas = manejadoraBL.crearPersona_BL(oPersona);
-                lista = listadoBL.listadoCompletoPersonas_BL();
-
-                ViewData["numFilas"] = $"Se ha creado correctamente {filasAfectadas} persona";
+                return View(oPersona);
             }
-            catch (Exception)
+            else
             {
-                ViewData["error"] = "error no controlado";
+                try
+                {
+                    filasAfectadas = manejadoraBL.crearPersona_BL(oPersona);
+                    lista = listadoBL.listadoCompletoPersonas_BL();
+
+                    ViewData["numFilas"] = $"Se ha creado correctamente {filasAfectadas} persona";
+                }
+                catch (Exception)
+                {
+                    ViewData["error"] = "error no controlado";
                 }
 
+                return View("listadoCompleto", lista);
+            }
 
-            return View("listadoCompleto", lista);
+            
         }
 
 
@@ -174,20 +182,29 @@ namespace _07_CRUDPersonas_UI.Controllers
             clsListadoPersonas_BL listadoBL = new clsListadoPersonas_BL();
             List<clsPersona> lista = new List<clsPersona>();
 
-            try
+            if(!ModelState.IsValid)
             {
-                filasAfectadas = manejadoraBL.editarPersona_BL(oPersona);
-                lista = listadoBL.listadoCompletoPersonas_BL();
-
-                ViewData["numFilas"] = $"Se ha editado correctamente {filasAfectadas} persona";
+                return View(oPersona);
             }
-            catch (Exception)
+            else
             {
-                ViewData["error"] = "error no controlado";
+                try
+                {
+                    filasAfectadas = manejadoraBL.editarPersona_BL(oPersona);
+                    lista = listadoBL.listadoCompletoPersonas_BL();
+
+                    ViewData["numFilas"] = $"Se ha editado correctamente {filasAfectadas} persona";
+                }
+                catch (Exception)
+                {
+                    ViewData["error"] = "error no controlado";
+                }
+
+
+                return View("listadoCompleto", lista);
             }
 
-
-            return View("listadoCompleto", lista);
+            
         }
 
 

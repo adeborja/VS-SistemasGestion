@@ -7,3 +7,14 @@ D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Relea
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Release\07-CRUDPersonas-DAL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Release\07-CRUDPersonas-DAL.dll
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\obj\Release\07-CRUDPersonas-DAL.pdb
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.Mvc.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.Razor.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.Razor.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.Deployment.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.Mvc.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.Razor.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.Razor.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-DAL\bin\Release\System.Web.WebPages.Deployment.xml

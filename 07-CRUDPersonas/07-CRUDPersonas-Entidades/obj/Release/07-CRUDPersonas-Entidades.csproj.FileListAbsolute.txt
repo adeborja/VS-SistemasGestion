@@ -4,3 +4,17 @@ D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Release\07-CRUDPersonas-Entidades.csproj.CoreCompileInputs.cache
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Release\07-CRUDPersonas-Entidades.dll
 D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Release\07-CRUDPersonas-Entidades.pdb
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Helpers.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Mvc.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Razor.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.Deployment.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.Razor.dll
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Helpers.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Mvc.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.Razor.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.Deployment.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\bin\Release\System.Web.WebPages.Razor.xml
+D:\Github Angel\VS-SistemasGestion\07-CRUDPersonas\07-CRUDPersonas-Entidades\obj\Release\07-CRUDPersonas-Entidades.csproj.CopyComplete
