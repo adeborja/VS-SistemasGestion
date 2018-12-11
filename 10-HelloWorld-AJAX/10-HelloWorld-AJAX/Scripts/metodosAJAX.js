@@ -1,4 +1,5 @@
-﻿//manuales>javascript>ultimo
+﻿
+//manuales>javascript>ultimo
 
 window.onload = inicializaEventos;
 
@@ -13,7 +14,7 @@ function llamada()
     var miLlamada = new XMLHttpRequest();
 
     //miLlamada.open("GET", "/Home/Index");
-    miLlamada.open("GET", "https://angelapirestpersonas.azurewebsites.net/api/personas/1");
+    miLlamada.open("GET", "https://angelapirestpersonas.azurewebsites.net/api/personas");
 
     //Mientras viene
     miLlamada.onreadystatechange = function () {
@@ -26,9 +27,25 @@ function llamada()
         }
         //cuando ya han terminado
         else if (miLlamada.readyState == 4 && miLlamada.status == 200) {
-            document.getElementById("textoMostrar").innerHTML = miLlamada.responseText;
+            //document.getElementById("textoMostrar").innerHTML = miLlamada.responseText;
+
+            //Continuacion
+            //Pasarlo a objeto y escribir una propiedad
+            var oPersona = new persona();
+            var arrayPersonas = JSON.parse(miLlamada.responseText);
+            oPersona = arrayPersonas[0];
+            document.getElementById("textoMostrar").innerHTML = oPersona.telefono;
         }
     };
 
     miLlamada.send();
 }
+
+//class persona {
+//    constructor(nombre, apellidos, fechaNacimiento, direccion) {
+//        this.nombre = nombre;
+//        this.apellidos = apellidos;
+//        this.fechaNacimiento = fechaNacimiento;
+//        this.direccion = direccion;
+//    }
+//}
