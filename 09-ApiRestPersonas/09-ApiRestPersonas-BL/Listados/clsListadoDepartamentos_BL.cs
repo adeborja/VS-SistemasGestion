@@ -10,7 +10,7 @@ namespace _09_ApiRestPersonas_BL.Listados
 {
     public class clsListadoDepartamentos_BL
     {
-        public List<clsDepartamento> listadoCompletoPersonas_BL()
+        public List<clsDepartamento> listadoCompletoDepartamentos_BL()
         {
             List<clsDepartamento> lista = new List<clsDepartamento>();
 
