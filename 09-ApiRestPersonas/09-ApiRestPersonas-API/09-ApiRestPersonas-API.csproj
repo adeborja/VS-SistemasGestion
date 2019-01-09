@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\AngelApiRestPersonas - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ApiRestPersonasAngel - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
