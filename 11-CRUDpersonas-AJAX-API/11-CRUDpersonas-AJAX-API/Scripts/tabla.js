@@ -2,8 +2,8 @@
 
 function inicializaEventos() {
     obtenerDatos();
-    //generarTabla();
-    //alert('inicio');
+    generarTabla();
+    alert('inicio');
 }
 
 function obtenerDatos() {
@@ -13,7 +13,7 @@ function obtenerDatos() {
     var miLlamada = new XMLHttpRequest();
 
     //miLlamada.open("GET", "/Home/Index");
-    miLlamada.open("GET", "https://angelapirestpersonas.azurewebsites.net/api/personas");
+    miLlamada.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/personas");
 
     //Mientras viene
     miLlamada.onreadystatechange = function () {
