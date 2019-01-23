@@ -102,6 +102,7 @@ function generarTabla(arrayPersonas) {
         var btnEditar = document.createElement("tr");
         var txtEditar = document.createElement("input");
 
+        txtEditar.setAttribute("id", "btnEditar");
         txtEditar.setAttribute("type", "button");
         txtEditar.setAttribute("value", "Editar");
         txtEditar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");

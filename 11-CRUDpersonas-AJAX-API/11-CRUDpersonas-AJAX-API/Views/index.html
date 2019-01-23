@@ -4,9 +4,14 @@
     <meta charset="utf-8" />
     <title>CRUD Personas Javascript</title>
     <script src="../Scripts/tabla.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <style>
         button {
             background-color: burlywood;
@@ -31,14 +36,98 @@
         .listaDePersonas {
             margin: 10px;
         }
+
+        .modal-header {
+            background-color: #5cb85c;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="barraBotonesSuperior">
-        <button>Nuevo</button><button>Actualizar</button><a id="textoMostrar" class="textoMostrar"></a>
+        <button id="btnNuevo">Nuevo</button><button id="btnEditar">Actualizar</button><a id="textoMostrar" class="textoMostrar"></a>
     </div>
     <div class="listaDePersonas">
 
     </div>
+
+    <div class="container">
+
+        <!-- Bloque de la pantalla de crear nueva persona -->
+        <div class="modal fade" id="myModalNuevo" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 30px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-heart"></span> Crear nueva persona</h4>
+                    </div>
+
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre" />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" placeholder="Introduce apellidos" />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" />
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" id="direccion" placeholder="Introduce direccion" />
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" class="form-control" id="telefono" placeholder="Introduce telefono" />
+                            </div>
+                            <div class="form-group">
+                                <label for="idDepartamento">Departamento</label>
+                                <input type="text" class="form-control" id="idDepartamento" placeholder="Introduce departamento (ID)" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                        <button type="submit" class="btn btn-success btn-default pull-right"><span class="glyphicon glyphicon-ok-sign"></span> Crear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 30px;">
+                        <h4>Has pulsado EDITAR</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de la pantalla de crear nueva persona -->
+    <script>
+        $(document).ready(function () {
+            $("#btnNuevo").click(function () {
+                $("#myModalNuevo").modal();
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btnEditar").click(function () {
+                $("#myModal").modal();
+            });
+        });
+    </script>
 </body>
 </html>
