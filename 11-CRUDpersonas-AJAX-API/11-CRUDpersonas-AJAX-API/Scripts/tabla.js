@@ -18,7 +18,7 @@ function obtenerDatos() {
     //Mientras viene
     miLlamada.onreadystatechange = function () {
 
-        alert(miLlamada.readyState);
+        //alert(miLlamada.readyState);
 
         //mientras se espera a que se terminen los pasos anteriores
         if (miLlamada.readyState < 4) {
@@ -32,6 +32,10 @@ function obtenerDatos() {
             var arrayPersonas = JSON.parse(miLlamada.responseText);
 
             generarTabla(arrayPersonas);
+
+            $("input[id='btnEditar']").click(function () {
+                $("#myModal").modal();
+            });
         }
     };
 
@@ -52,7 +56,10 @@ function generarTabla(arrayPersonas) {
     var tabla = document.createElement("table");
 
     //Claves del array
-    var cols = Object.keys(arrayPersonas[0]);
+    //var cols = Object.keys(arrayPersonas[0]);
+    var cols = 0;
+    if (arrayPersonas != null && arrayPersonas.length > 0) col = Object.keys(arrayPersonas[0]);
+    else console.log("arrayPersonas no tiene elementos");
 
     var thead = document.createElement("thead");
 
