@@ -14,7 +14,7 @@
 
     <style>
         button {
-            background-color: burlywood;
+            background-color: darkgoldenrod;
             padding: 10px 15px;
             margin: 10px 10px;
             border: none;
@@ -43,15 +43,37 @@
             text-align: center;
             font-size: 30px;
         }
+
+        #headerBorrar {
+            background-color: #FF0000;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #headerBorrar, #headerConfirmarBorrar, #headerCuadroError {
+            background-color: #FF0000;
+            color: white !important;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        #headerEditar, #headerCuadroCargando {
+            background-color: darkorange;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="barraBotonesSuperior">
-        <button id="btnNuevo">Nuevo</button><button id="btnEditar">Actualizar</button><a id="textoMostrar" class="textoMostrar"></a>
+        <button id="btnNuevo">Nuevo</button><button id="btnEditar" type="button" onclick="actualizarTabla();">Actualizar</button><a id="textoMostrar" class="textoMostrar"></a><button id="btnAux" onclick="modalCargandoDatos();">Aux</button>
     </div>
-    <div class="listaDePersonas">
 
-    </div>
+    <!--<div class="listaDePersonas">
+
+    </div>-->
 
     <div class="container">
 
@@ -68,27 +90,27 @@
                         <form role="form">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre" />
+                                <input type="text" class="form-control" id="nombreNuevo" placeholder="Introduce nombre" />
                             </div>
                             <div class="form-group">
                                 <label for="apellidos">Apellidos</label>
-                                <input type="text" class="form-control" id="apellidos" placeholder="Introduce apellidos" />
+                                <input type="text" class="form-control" id="apellidosNuevo" placeholder="Introduce apellidos" />
                             </div>
                             <div class="form-group">
                                 <label for="apellidos">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" id="fechaNacimiento" />
+                                <input type="date" class="form-control" id="fechaNacimientoNuevo" />
                             </div>
                             <div class="form-group">
                                 <label for="direccion">Direccion</label>
-                                <input type="text" class="form-control" id="direccion" placeholder="Introduce direccion" />
+                                <input type="text" class="form-control" id="direccionNuevo" placeholder="Introduce direccion" />
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Telefono</label>
-                                <input type="text" class="form-control" id="telefono" placeholder="Introduce telefono" />
+                                <input type="text" class="form-control" id="telefonoNuevo" placeholder="Introduce telefono" />
                             </div>
                             <div class="form-group">
                                 <label for="idDepartamento">Departamento</label>
-                                <input type="text" class="form-control" id="idDepartamento" placeholder="Introduce departamento (ID)" />
+                                <input type="text" class="form-control" id="idDepartamentoNuevo" placeholder="Introduce departamento (ID)" />
                             </div>
                         </form>
                     </div>
@@ -101,10 +123,11 @@
             </div>
         </div>
 
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
+        <!-- Bloque de la pantalla de editar una persona -->
+        <div class="modal fade" id="myModalEditar" role="dialog">
+            <div class="modal-dialog" data-bind="with: personaSeleccionada">
                 <div class="modal-content">
-                    <div class="modal-header" style="padding:35px 30px;">
+                    <div class="modal-header" id="headerEditar" style="padding:35px 30px;">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4><span class="glyphicon glyphicon-share"></span> Editar persona</h4>
                     </div>
@@ -113,7 +136,7 @@
                         <form role="form">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre" />
+                                <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre" data-bind="value: nombre" />
                             </div>
                             <div class="form-group">
                                 <label for="apellidos">Apellidos</label>
@@ -145,6 +168,98 @@
                 </div>
             </div>
         </div>
+
+        <!-- Bloque de la pantalla de borrar una persona -->
+        <div class="modal fade" id="myModalBorrar" role="dialog" aria-hidden="true">
+            <!--data-backdrop="static"-->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="headerBorrar" style="padding:35px 30px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-fire"></span> Borrar persona</h4>
+                    </div>
+
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <p type="text" class="form-control" id="nombre" placeholder="Introduce nombre" />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" placeholder="Introduce apellidos" />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" />
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" id="direccion" placeholder="Introduce direccion" />
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" class="form-control" id="telefono" placeholder="Introduce telefono" />
+                            </div>
+                            <div class="form-group">
+                                <label for="idDepartamento">Departamento</label>
+                                <input type="text" class="form-control" id="idDepartamento" placeholder="Introduce departamento (ID)" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                        <button type="submit" class="btn btn-danger btn-default pull-right" id="btnBorrarPersona"><span class="glyphicon glyphicon-ok-sign"></span> BORRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuadro de confirmacion de borrar persona -->
+        <div class="modal fade" id="modalConfirmarBorrar" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="headerConfirmarBorrar" style="padding:35px 30px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4>¿SEGURO QUE QUIERES BORRAR A ESTA PERSONA?</h4>
+                        <h4>ESTA ACCIÓN SERÁ PERMANENTE</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-default pull-left" id="btnNoConfirmarBorrar" onclick="noBorrarPersona();"><!--data-dismiss="modal"--><span class="glyphicon glyphicon-remove"></span> Salir</button>
+                        <button type="submit" class="btn btn-danger btn-default pull-right" id="btnConfirmarBorrar" onclick="borrarPersona();"><span class="glyphicon glyphicon-ok-sign"></span> BORRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuadro de mensaje de error -->
+        <div class="modal fade" id="cuadroError" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="headerCuadroError" style="padding:35px 30px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4>Ha ocurrido un error. La operación no se realizó.</h4>
+                    </div>
+                    <!--<div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-right" id="btnConfirmarCuadro"><span class="glyphicon glyphicon-ok-sign"></span> Confirmar</button>
+                </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuadro de mensaje de cargando -->
+        <div class="modal fade" id="cuadroCargando" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="headerCuadroCargando" style="padding:35px 30px;">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4>Cargando datos, espere por favor...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Script de la pantalla de crear nueva persona -->
@@ -156,13 +271,23 @@
         });
     </script>
 
-
-    <script>
+    <!-- Script de la pantalla de editar una persona. Es necesario ponerlo un poco diferente dentro del javascript para que funcione -->
+    <!--<script>
         $(document).ready(function () {
             $("#btnEditar").click(function () {
-                $("#myModal").modal();
+                $("#myModalEditar").modal();
+            });
+        });
+    </script>-->
+
+    <!-- Script de la pantalla de borrar persona definitivamente -->
+    <script>
+        $(document).ready(function () {
+            $("#btnBorrarPersona").click(function () {
+                $("#modalConfirmarBorrar").modal();
             });
         });
     </script>
+
 </body>
 </html>

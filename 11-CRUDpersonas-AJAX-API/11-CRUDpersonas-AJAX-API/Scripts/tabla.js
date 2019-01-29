@@ -2,8 +2,18 @@
 
 function inicializaEventos() {
     obtenerDatos();
-    generarTabla();
-    alert('inicio');
+    //generarTabla();
+    //alert('inicio');
+}
+
+function actualizarTabla() {
+    borrarTabla();
+    obtenerDatos();
+    //generarTabla();
+}
+
+function borrarTabla() {
+    $("#tablaElementos").remove();
 }
 
 function obtenerDatos() {
@@ -22,19 +32,26 @@ function obtenerDatos() {
 
         //mientras se espera a que se terminen los pasos anteriores
         if (miLlamada.readyState < 4) {
-            document.getElementById("textoMostrar").innerHTML = "Cargando...";
+            //document.getElementById("textoMostrar").innerHTML = "Cargando...";
+            modalCargandoDatos();
         }
         //cuando ya han terminado
         else if (miLlamada.readyState == 4 && miLlamada.status == 200) {
 
-            document.getElementById("textoMostrar").innerHTML = "Cargado";
+            modalDatosCargados();
+
+            //document.getElementById("textoMostrar").innerHTML = "Cargado";
             
             var arrayPersonas = JSON.parse(miLlamada.responseText);
 
             generarTabla(arrayPersonas);
 
             $("input[id='btnEditar']").click(function () {
-                $("#myModal").modal();
+                $("#myModalEditar").modal();
+            });
+
+            $("input[id='btnBorrar']").click(function () {
+                $("#myModalBorrar").modal();
             });
         }
     };
@@ -51,14 +68,16 @@ function generarTabla(arrayPersonas) {
 
     //Obtener referencia del elemento Body
     var body = document.getElementsByTagName("body")[0];
+    //body.setAttribute("id", "tablaElementos");
 
     //Crea una tabla y un elemento para su cuerpo
     var tabla = document.createElement("table");
+    tabla.setAttribute("id", "tablaElementos");
 
     //Claves del array
     //var cols = Object.keys(arrayPersonas[0]);
     var cols = 0;
-    if (arrayPersonas != null && arrayPersonas.length > 0) col = Object.keys(arrayPersonas[0]);
+    if (arrayPersonas != null && arrayPersonas.length > 0) cols = Object.keys(arrayPersonas[0]);
     else console.log("arrayPersonas no tiene elementos");
 
     var thead = document.createElement("thead");
@@ -99,7 +118,31 @@ function generarTabla(arrayPersonas) {
 
             //Crea un nodo de texto y escribe el texto que tendrá la celda
             //var textoCelda = document.createTextNode("celda " + i + "," + j);
+
+            switch (prop) {
+                case "nombre":
+                    celda.setAttribute("data-bind", "text: $data.nombre");
+                    break;
+                case "apellidos":
+                    celda.setAttribute("data-bind", "text: $data.apellidos");
+                    break;
+            }
+            
+
             var textoCelda = document.createTextNode(arrayPersonas[i][prop]);
+
+            //https://stackoverflow.com/questions/40151114/why-does-document-createtextnode-not-allow-setattribute
+
+            //https://stackoverflow.com/questions/44074906/bind-data-to-modal-on-table-cell-click
+
+            /*switch (prop) {
+                case "nombre":
+                    textoCelda.setAttribute("data-bind", "text: $data.nombre");
+                    break;
+                case "apellidos":
+                    textoCelda.setAttribute("data-bind", "text: $data.apellidos");
+                    break;
+            }*/
 
             celda.appendChild(textoCelda);
             hilera.appendChild(celda);
@@ -120,6 +163,7 @@ function generarTabla(arrayPersonas) {
         var btnBorrar = document.createElement("tr");
         var txtBorrar = document.createElement("input");
 
+        txtBorrar.setAttribute("id", "btnBorrar");
         txtBorrar.setAttribute("type", "button");
         txtBorrar.setAttribute("value", "Borrar");
         txtBorrar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
@@ -141,4 +185,26 @@ function generarTabla(arrayPersonas) {
     tabla.setAttribute("border", "4");
 
     //divTabla.appendChild(body);
+}
+
+function borrarPersona() {
+    location.reload();
+}
+
+function noBorrarPersona() {
+    $("#modalConfirmarBorrar").modal('hide');
+    $("#myModalBorrar").modal('hide');
+    mensajeError();
+}
+
+function mensajeError() {
+    $("#cuadroError").modal();
+}
+
+function modalCargandoDatos() {
+    $("#cuadroCargando").modal();
+}
+
+function modalDatosCargados() {
+    $("#cuadroCargando").modal('hide');
 }
