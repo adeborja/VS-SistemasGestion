@@ -1,0 +1,55 @@
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.deps.json
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.json
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.dev.json
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.pdb
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csprojResolveAssemblyReference.cache
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csproj.CoreCompileInputs.cache
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfoInputs.cache
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfo.cs
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\fernando\Desktop\Sistemas de Gestion-Git\2017-18\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.pdb
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.deps.json
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.json
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.dev.json
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.dll
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.pdb
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csprojAssemblyReference.cache
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csproj.CoreCompileInputs.cache
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfoInputs.cache
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfo.cs
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.dll
+\\servidor\Copia de seguridad\2017-18\Asignaturas de segundo\Sistemas de gestion\2ª Evaluacion\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.pdb
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.deps.json
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.json
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.dev.json
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.dll
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.pdb
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csprojAssemblyReference.cache
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csproj.CoreCompileInputs.cache
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfoInputs.cache
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfo.cs
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.dll
+E:\Sistemas de Gestion\Examenes\2018-19\2ª Ev\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.pdb
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.deps.json
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.json
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.dev.json
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.pdb
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csprojAssemblyReference.cache
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csproj.CoreCompileInputs.cache
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfoInputs.cache
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfo.cs
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\adeborja\Desktop\WebApiLoL\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.pdb
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.deps.json
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.json
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.runtimeconfig.dev.json
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\bin\Debug\netcoreapp2.0\WebApiLoL.pdb
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csprojAssemblyReference.cache
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.csproj.CoreCompileInputs.cache
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfoInputs.cache
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.AssemblyInfo.cs
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.dll
+C:\Users\adeborja\Desktop\Angel\WebApiLoL\obj\Debug\netcoreapp2.0\WebApiLoL.pdb
