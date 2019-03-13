@@ -1,58 +1,39 @@
 ﻿window.onload = inicializaEventos;
+var posicionIdPersona = 0;
 
 function inicializaEventos() {
     obtenerDatos();
-    //generarTabla();
+    //añadir eventos a los botones
+    //TODO
+    //document.getElementById("btnEditar").
+    
     //alert('inicio');
-}
-
-function actualizarTabla() {
-    borrarTabla();
-    obtenerDatos();
-    //generarTabla();
-}
-
-function borrarTabla() {
-    $("#tablaElementos").remove();
 }
 
 function obtenerDatos() {
 
-    //document.getElementById("textoMostrar").innerHTML = "Texto de prueba";
-
     var miLlamada = new XMLHttpRequest();
-
-    //miLlamada.open("GET", "/Home/Index");
+    
     miLlamada.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/personas");
 
     //Mientras viene
     miLlamada.onreadystatechange = function () {
 
-        //alert(miLlamada.readyState);
-
         //mientras se espera a que se terminen los pasos anteriores
         if (miLlamada.readyState < 4) {
             //document.getElementById("textoMostrar").innerHTML = "Cargando...";
-            modalCargandoDatos();
+            //modalCargandoDatos();
         }
         //cuando ya han terminado
         else if (miLlamada.readyState == 4 && miLlamada.status == 200) {
 
-            modalDatosCargados();
+            //modalDatosCargados();
 
             //document.getElementById("textoMostrar").innerHTML = "Cargado";
             
             var arrayPersonas = JSON.parse(miLlamada.responseText);
 
             generarTabla(arrayPersonas);
-
-            $("input[id='btnEditar']").click(function () {
-                $("#myModalEditar").modal();
-            });
-
-            $("input[id='btnBorrar']").click(function () {
-                $("#myModalBorrar").modal();
-            });
         }
     };
 
@@ -61,10 +42,7 @@ function obtenerDatos() {
 
 
 function generarTabla(arrayPersonas) {
-
-    var divTabla = document.getElementById(divTabla);
-
-    //alert('Entrada al onreadystatechange');
+    
 
     //Obtener referencia del elemento Body
     var body = document.getElementsByTagName("body")[0];
@@ -75,7 +53,6 @@ function generarTabla(arrayPersonas) {
     tabla.setAttribute("id", "tablaElementos");
 
     //Claves del array
-    //var cols = Object.keys(arrayPersonas[0]);
     var cols = 0;
     if (arrayPersonas != null && arrayPersonas.length > 0) cols = Object.keys(arrayPersonas[0]);
     else console.log("arrayPersonas no tiene elementos");
@@ -92,7 +69,13 @@ function generarTabla(arrayPersonas) {
 
         thh.appendChild(textoTh);
 
+        if (cols[i] == "idPersona") {
+            thh.hidden = true;
+            posicionIdPersona = i;
+        }
+
         hilera.appendChild(thh);
+        
     }
 
     thead.appendChild(hilera);
@@ -107,46 +90,20 @@ function generarTabla(arrayPersonas) {
     for (var i = 0; i < arrayPersonas.length; i++) {
 
         //Crea las hileras de la tabla
-        //var hilera2 = document.createElement("tr");
         hilera = document.createElement("tr"); //Se vuelve a crear la asignacion para limpiar la configuracion anterior. Comentar esta linea para ver por qué.
 
         //Crear las columnas
-        //for (var j = 0; j < 6; j++) {
         for (var prop in arrayPersonas[0]) {
             //Crea un elemento td
             var celda = document.createElement("td");
 
-            //Crea un nodo de texto y escribe el texto que tendrá la celda
-            //var textoCelda = document.createTextNode("celda " + i + "," + j);
-
-            switch (prop) {
-                case "nombre":
-                    celda.setAttribute("data-bind", "text: $data.nombre");
-                    break;
-                case "apellidos":
-                    celda.setAttribute("data-bind", "text: $data.apellidos");
-                    break;
-            }
-            
-
             var textoCelda = document.createTextNode(arrayPersonas[i][prop]);
 
-            //https://stackoverflow.com/questions/40151114/why-does-document-createtextnode-not-allow-setattribute
-
-            //https://stackoverflow.com/questions/44074906/bind-data-to-modal-on-table-cell-click
-
-            /*switch (prop) {
-                case "nombre":
-                    textoCelda.setAttribute("data-bind", "text: $data.nombre");
-                    break;
-                case "apellidos":
-                    textoCelda.setAttribute("data-bind", "text: $data.apellidos");
-                    break;
-            }*/
-
             celda.appendChild(textoCelda);
+
             hilera.appendChild(celda);
         }
+        hilera.cells[posicionIdPersona].hidden = true;
 
         //Añadir los botones necesarios
         var btnEditar = document.createElement("tr");
@@ -180,31 +137,14 @@ function generarTabla(arrayPersonas) {
     //posicionar tbody debajo del elemento tabla
     tabla.appendChild(tbody);
 
+    //Borrar la columna idPersona de la tabla
+    /*var allRows = tabla.rows;
+    for(var x = 0; x < allRows.length; x++)
+    {
+        allRows[x].deleteCell(posicionIdPersona);
+    }*/
+
     body.appendChild(tabla);
 
-    tabla.setAttribute("border", "4");
-
-    //divTabla.appendChild(body);
-}
-
-function borrarPersona() {
-    location.reload();
-}
-
-function noBorrarPersona() {
-    $("#modalConfirmarBorrar").modal('hide');
-    $("#myModalBorrar").modal('hide');
-    mensajeError();
-}
-
-function mensajeError() {
-    $("#cuadroError").modal();
-}
-
-function modalCargandoDatos() {
-    $("#cuadroCargando").modal();
-}
-
-function modalDatosCargados() {
-    $("#cuadroCargando").modal('hide');
+    //tabla.setAttribute("border", "4");
 }

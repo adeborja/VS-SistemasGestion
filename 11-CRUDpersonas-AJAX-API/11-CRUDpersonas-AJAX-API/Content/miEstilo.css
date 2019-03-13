@@ -1,0 +1,4 @@
+﻿
+table th::first-letter {
+    text-transform: uppercase;
+}
