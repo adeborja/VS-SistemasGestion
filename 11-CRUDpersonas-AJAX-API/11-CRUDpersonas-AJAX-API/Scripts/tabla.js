@@ -1,8 +1,10 @@
 ﻿window.onload = inicializaEventos;
 var posicionIdPersona = 0;
+//var posicionIdDepartamento = 0;
 
 function inicializaEventos() {
     obtenerDatos();
+
     //añadir eventos a los botones
     //TODO
     //document.getElementById("btnEditar").
@@ -12,36 +14,57 @@ function inicializaEventos() {
 
 function obtenerDatos() {
 
+    var arrayPersonas;
+    var arrayDepartamentos;
+
     var miLlamada = new XMLHttpRequest();
-    
+
     miLlamada.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/personas");
 
     //Mientras viene
     miLlamada.onreadystatechange = function () {
 
-        //mientras se espera a que se terminen los pasos anteriores
-        if (miLlamada.readyState < 4) {
-            //document.getElementById("textoMostrar").innerHTML = "Cargando...";
-            //modalCargandoDatos();
-        }
-        //cuando ya han terminado
-        else if (miLlamada.readyState == 4 && miLlamada.status == 200) {
-
-            //modalDatosCargados();
-
-            //document.getElementById("textoMostrar").innerHTML = "Cargado";
+        if (miLlamada.readyState == 4 && miLlamada.status == 200) {
             
-            var arrayPersonas = JSON.parse(miLlamada.responseText);
+            arrayPersonas = JSON.parse(miLlamada.responseText);
 
-            generarTabla(arrayPersonas);
+            //generarTabla(arrayPersonas);//, arrayDepartamentos);
+
+            var nombresDepartamento = new XMLHttpRequest();
+
+            nombresDepartamento.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/departamentos");
+
+            nombresDepartamento.onreadystatechange = function () {
+                if (nombresDepartamento.readyState == 4 && nombresDepartamento.status == 200) {
+                    arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
+
+                    generarTabla(arrayPersonas, arrayDepartamentos);
+                }
+            };
+
+            nombresDepartamento.send();
         }
     };
 
     miLlamada.send();
+
+    /*var nombresDepartamento = new XMLHttpRequest();
+
+    nombresDepartamento.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/departamentos");
+
+    nombresDepartamento.onreadystatechange = function () {
+        if (nombresDepartamento.readyState == 4 && nombresDepartamento.status == 200) {
+            arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
+
+            generarTabla(arrayPersonas);
+        }
+    };
+    
+    nombresDepartamento.send();*/
 }
 
 
-function generarTabla(arrayPersonas) {
+function generarTabla(arrayPersonas, arrayDepartamentos) {
     
 
     //Obtener referencia del elemento Body
@@ -65,7 +88,15 @@ function generarTabla(arrayPersonas) {
     for (var i = 0; i < cols.length; i++) {
         var thh = document.createElement("th");
 
-        var textoTh = document.createTextNode(cols[i]);
+        //var textoTh = document.createTextNode(cols[i]);
+
+        if (cols[i] == "idDepartamento") {
+            textoTh = document.createTextNode("Departamento");
+            //posicionIdDepartamento = i;
+        }
+        else {
+            textoTh = document.createTextNode(cols[i]);
+        }
 
         thh.appendChild(textoTh);
 
@@ -92,17 +123,32 @@ function generarTabla(arrayPersonas) {
         //Crea las hileras de la tabla
         hilera = document.createElement("tr"); //Se vuelve a crear la asignacion para limpiar la configuracion anterior. Comentar esta linea para ver por qué.
 
+        //var aux;
         //Crear las columnas
         for (var prop in arrayPersonas[0]) {
             //Crea un elemento td
             var celda = document.createElement("td");
 
-            var textoCelda = document.createTextNode(arrayPersonas[i][prop]);
+            var textoCelda;// = document.createTextNode(arrayPersonas[i][prop]);
+            //aux = arrayPersonas[i]["idDepartamento"];
+            //aux = arrayDepartamentos[1]["nombreDepartamento"];
+
+
+            if (prop != "idDepartamento") {
+                textoCelda = document.createTextNode(arrayPersonas[i][prop]);
+            }
+            else {
+                var aux = arrayPersonas[i]["idDepartamento"];
+                textoCelda = document.createTextNode(arrayDepartamentos[aux-1]["nombreDepartamento"]);
+            }
 
             celda.appendChild(textoCelda);
 
             hilera.appendChild(celda);
         }
+
+        //alert(aux);
+
         hilera.cells[posicionIdPersona].hidden = true;
 
         //Añadir los botones necesarios
