@@ -63,6 +63,20 @@ function obtenerDatos() {
     nombresDepartamento.send();*/
 }
 
+function buscarNombreDeDepartamento(arrayNombres, idBuscado) {
+    var nombre = null;
+    var departamentoEncontrado = false;
+    for (i = 0; !departamentoEncontrado && i < arrayNombres.length; i++)
+    {
+        if (arrayNombres[i]["idDepartamento"] == idBuscado) {
+            nombre = arrayNombres[i]["nombreDepartamento"];
+            departamentoEncontrado = true;
+        }
+    }
+
+    return nombre;
+}
+
 
 function generarTabla(arrayPersonas, arrayDepartamentos) {
     
@@ -138,8 +152,11 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                 textoCelda = document.createTextNode(arrayPersonas[i][prop]);
             }
             else {
+                //var aux = arrayPersonas[i]["idDepartamento"]; //hacer busqueda
+                //textoCelda = document.createTextNode(arrayDepartamentos[aux-1]["nombreDepartamento"]);
+
                 var aux = arrayPersonas[i]["idDepartamento"];
-                textoCelda = document.createTextNode(arrayDepartamentos[aux-1]["nombreDepartamento"]);
+                textoCelda = document.createTextNode(buscarNombreDeDepartamento(arrayDepartamentos, aux));
             }
 
             celda.appendChild(textoCelda);
@@ -155,6 +172,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var btnEditar = document.createElement("tr");
         var txtEditar = document.createElement("input");
 
+        txtEditar.setAttribute("numeroFila", i);
         txtEditar.setAttribute("id", "btnEditar");
         txtEditar.setAttribute("type", "button");
         txtEditar.setAttribute("value", "Editar");
@@ -166,6 +184,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var btnBorrar = document.createElement("tr");
         var txtBorrar = document.createElement("input");
 
+        txtBorrar.setAttribute("numeroFila", i);
         txtBorrar.setAttribute("id", "btnBorrar");
         txtBorrar.setAttribute("type", "button");
         txtBorrar.setAttribute("value", "Borrar");
@@ -173,6 +192,34 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         btnBorrar.appendChild(txtBorrar);
         //por completar
         hilera.appendChild(btnBorrar);
+
+
+        var btnGuardar = document.createElement("tr");
+        var txtGuardar = document.createElement("input");
+
+        txtGuardar.hidden = true;
+        txtGuardar.setAttribute("numeroFila", i);
+        txtGuardar.setAttribute("id", "btnGuardar");
+        txtGuardar.setAttribute("type", "button");
+        txtGuardar.setAttribute("value", "Guardar");
+        txtGuardar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
+        btnGuardar.appendChild(txtGuardar);
+        //por completar
+        hilera.appendChild(btnGuardar);
+
+
+        var btnCancelar = document.createElement("tr");
+        var txtCancelar = document.createElement("input");
+
+        txtCancelar.hidden = true;
+        txtCancelar.setAttribute("numeroFila", i);
+        txtCancelar.setAttribute("id", "btnCancelar");
+        txtCancelar.setAttribute("type", "button");
+        txtCancelar.setAttribute("value", "Cancelar");
+        txtCancelar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
+        btnCancelar.appendChild(txtCancelar);
+        //por completar
+        hilera.appendChild(btnCancelar);
 
 
 
