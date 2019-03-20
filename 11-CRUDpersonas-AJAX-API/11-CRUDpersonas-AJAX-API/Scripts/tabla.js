@@ -86,8 +86,10 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
     //body.setAttribute("id", "tablaElementos");
 
     //Crea una tabla y un elemento para su cuerpo
-    var tabla = document.createElement("table");
-    tabla.setAttribute("id", "tablaElementos");
+    var tabla = document.getElementById("tablaElementos");
+
+    //var tabla = document.createElement("table");
+    //tabla.setAttribute("id", "tablaElementos");
 
     //Claves del array
     var cols = 0;
@@ -177,7 +179,14 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         txtEditar.setAttribute("type", "button");
         txtEditar.setAttribute("value", "Editar");
         txtEditar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
+
+        //da error porque intenta enlazar la fila cuando aun no se ha creado
+        //txtEditar.click(clickEditar(i));
+
         btnEditar.appendChild(txtEditar);
+
+        //btnEditar.addEventListener("click", clickEditar(i), false);
+
         //por completar
         hilera.appendChild(btnEditar);
 
@@ -225,6 +234,24 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
         //agrega la hilera al final de la tabla (final del elemento tbody)
         tbody.appendChild(hilera);
+
+        //tbody.rows.item(i + 1).getElementById("btnEditar").addEventListener("click", clickEditar(i), false);
+    }
+
+    //evento onclick de editar
+
+    var fila = null;
+
+    for (i = 1; i < tbody.rows.length; i++) {
+        //tbody.rows.item(i).txtEditar.click(clickEditar(this.numeroFila));
+        //tbody.rows.item(i).btnEditar.addEventListener("click", clickEditar(1), false);
+        //tbody.rows.item(i).getElementById("btnEditar").addEventListener("click", clickEditar(i), false);
+
+        fila = tbody.rows.item(0);
+
+        //fila.getElementById("btnEditar").innerHTML = "Editttttt";
+        fila.children.item(0).addEventListener("click", clickEditar(i + 1), false);
+
     }
 
     //posicionar tbody debajo del elemento tabla
@@ -240,4 +267,22 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
     body.appendChild(tabla);
 
     //tabla.setAttribute("border", "4");
+}
+
+function clickEditar(numeroFila) {
+    'use-strick';
+
+    /*var filaTabla = document.getElementById("tablaElementos").rows[numeroFila].cells;
+
+    //Coger los campos de la fila
+    var campos = filaTabla.getElementsByTagName('td');
+    document.getElementById("demo").innerHTML = "" + campos[0].te*/
+
+    //alert(document.getElementById("tablaElementos").rows.item(numeroFila).innerHTML);
+    alert(45);
+
+
+    //https://stackoverflow.com/questions/16177458/adding-a-button-with-onclick-function-via-javascript-jquery
+    //https://www.w3schools.com/jsref/coll_table_rows.asp
+
 }
