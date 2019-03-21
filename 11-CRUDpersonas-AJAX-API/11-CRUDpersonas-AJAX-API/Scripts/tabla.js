@@ -4,6 +4,7 @@ var posicionIdPersona = 0;
 
 function inicializaEventos() {
     obtenerDatos();
+    //CrearEventosOnClickEditar();
 
     //añadir eventos a los botones
     //TODO
@@ -39,6 +40,8 @@ function obtenerDatos() {
                     arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
 
                     generarTabla(arrayPersonas, arrayDepartamentos);
+
+                    CrearEventosOnClickEditar();
                 }
             };
 
@@ -47,6 +50,8 @@ function obtenerDatos() {
     };
 
     miLlamada.send();
+
+    //CrearEventosOnClickEditar();
 
     /*var nombresDepartamento = new XMLHttpRequest();
 
@@ -174,7 +179,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var btnEditar = document.createElement("tr");
         var txtEditar = document.createElement("input");
 
-        txtEditar.setAttribute("numeroFila", i);
+        txtEditar.setAttribute("numerofila", i+1);
         txtEditar.setAttribute("id", "btnEditar");
         txtEditar.setAttribute("type", "button");
         txtEditar.setAttribute("value", "Editar");
@@ -193,7 +198,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var btnBorrar = document.createElement("tr");
         var txtBorrar = document.createElement("input");
 
-        txtBorrar.setAttribute("numeroFila", i);
+        txtBorrar.setAttribute("numerofila", i);
         txtBorrar.setAttribute("id", "btnBorrar");
         txtBorrar.setAttribute("type", "button");
         txtBorrar.setAttribute("value", "Borrar");
@@ -207,7 +212,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var txtGuardar = document.createElement("input");
 
         txtGuardar.hidden = true;
-        txtGuardar.setAttribute("numeroFila", i);
+        txtGuardar.setAttribute("numerofila", i);
         txtGuardar.setAttribute("id", "btnGuardar");
         txtGuardar.setAttribute("type", "button");
         txtGuardar.setAttribute("value", "Guardar");
@@ -221,7 +226,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         var txtCancelar = document.createElement("input");
 
         txtCancelar.hidden = true;
-        txtCancelar.setAttribute("numeroFila", i);
+        txtCancelar.setAttribute("numerofila", i);
         txtCancelar.setAttribute("id", "btnCancelar");
         txtCancelar.setAttribute("type", "button");
         txtCancelar.setAttribute("value", "Cancelar");
@@ -240,19 +245,19 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
     //evento onclick de editar
 
-    var fila = null;
+    /*var fila = null;
 
-    for (i = 1; i < tbody.rows.length; i++) {
+    for (i = 0; i < tbody.rows.length; i++) {
         //tbody.rows.item(i).txtEditar.click(clickEditar(this.numeroFila));
         //tbody.rows.item(i).btnEditar.addEventListener("click", clickEditar(1), false);
         //tbody.rows.item(i).getElementById("btnEditar").addEventListener("click", clickEditar(i), false);
 
-        fila = tbody.rows.item(0);
+        fila = tbody.rows.item(i);
+        
+        //fila.children.item(7).innerHTML = "Edittttt";
+        fila.children.item(7).addEventListener("click", clickEditar(i), false);
 
-        //fila.getElementById("btnEditar").innerHTML = "Editttttt";
-        fila.children.item(0).addEventListener("click", clickEditar(i + 1), false);
-
-    }
+    }*/
 
     //posicionar tbody debajo del elemento tabla
     tabla.appendChild(tbody);
@@ -269,8 +274,8 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
     //tabla.setAttribute("border", "4");
 }
 
-function clickEditar(numeroFila) {
-    'use-strick';
+function clickEditar() {
+    //'use-strick';
 
     /*var filaTabla = document.getElementById("tablaElementos").rows[numeroFila].cells;
 
@@ -279,10 +284,32 @@ function clickEditar(numeroFila) {
     document.getElementById("demo").innerHTML = "" + campos[0].te*/
 
     //alert(document.getElementById("tablaElementos").rows.item(numeroFila).innerHTML);
-    alert(45);
+    var numFila = this.getAttribute("numerofila");
+
+    alert(numFila);
+
+    //se ah cambiado numeroFila por i+1
+    document.getElementById("tablaElementos").rows[numFila].children.item(7).firstChild.hidden = true;
+    document.getElementById("tablaElementos").rows[numFila].children.item(8).firstChild.hidden = true;
+    document.getElementById("tablaElementos").rows[numFila].children.item(9).firstChild.hidden = false;
+    document.getElementById("tablaElementos").rows[numFila].children.item(10).firstChild.hidden = false;
 
 
     //https://stackoverflow.com/questions/16177458/adding-a-button-with-onclick-function-via-javascript-jquery
     //https://www.w3schools.com/jsref/coll_table_rows.asp
 
+}
+
+function CrearEventosOnClickEditar() {
+    var tabla = document.getElementById("tablaElementos");
+    var fila = null;
+
+    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+
+        //fila = tabla.children.item(1).children.item(i);
+        fila = tabla.rows[i];
+        //alert(fila.children.item(7));
+        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
+
+    }
 }
