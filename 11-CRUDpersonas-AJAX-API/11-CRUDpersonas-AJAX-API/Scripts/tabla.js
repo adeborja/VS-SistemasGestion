@@ -1,5 +1,6 @@
 ﻿window.onload = inicializaEventos;
 var posicionIdPersona = 0;
+var arrayDepartamentos;
 //var posicionIdDepartamento = 0;
 
 function inicializaEventos() {
@@ -16,7 +17,7 @@ function inicializaEventos() {
 function obtenerDatos() {
 
     var arrayPersonas;
-    var arrayDepartamentos;
+    //var arrayDepartamentos;
 
     var miLlamada = new XMLHttpRequest();
 
@@ -66,6 +67,23 @@ function obtenerDatos() {
     };
     
     nombresDepartamento.send();*/
+}
+
+function obtenerListaDepartamentos() {
+    var arrayDepartamentos;
+    var nombresDepartamento = new XMLHttpRequest();
+
+    nombresDepartamento.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/departamentos");
+
+    nombresDepartamento.onreadystatechange = function () {
+        if (nombresDepartamento.readyState == 4 && nombresDepartamento.status == 200) {
+            arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
+
+            return arrayDepartamentos;
+        }
+    };
+
+    //nombresDepartamento.send();
 }
 
 function buscarNombreDeDepartamento(arrayNombres, idBuscado) {
@@ -137,6 +155,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
 
     var tbody = document.createElement("tbody");
+    //tbody.set
 
     //Crear las filas
     for (var i = 0; i < arrayPersonas.length; i++) {
@@ -147,8 +166,15 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         //var aux;
         //Crear las columnas
         for (var prop in arrayPersonas[0]) {
+            
             //Crea un elemento td
             var celda = document.createElement("td");
+
+
+            //prueba editable
+            //var divv = document.createElement("div");
+            //divv.contentEditable = "true";
+
 
             var textoCelda;// = document.createTextNode(arrayPersonas[i][prop]);
             //aux = arrayPersonas[i]["idDepartamento"];
@@ -167,6 +193,11 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
             }
 
             celda.appendChild(textoCelda);
+
+            //prueba editable
+            //divv.appendChild(textoCelda);
+            //celda.appendChild(divv);
+
 
             hilera.appendChild(celda);
         }
@@ -286,9 +317,10 @@ function clickEditar() {
     //alert(document.getElementById("tablaElementos").rows.item(numeroFila).innerHTML);
     var numFila = this.getAttribute("numerofila");
 
-    alert(numFila);
+    //alert(numFila);
 
     //se ah cambiado numeroFila por i+1
+    //Cambia la visibilidad de los botones al hacer click en el boton de Editar
     document.getElementById("tablaElementos").rows[numFila].children.item(7).firstChild.hidden = true;
     document.getElementById("tablaElementos").rows[numFila].children.item(8).firstChild.hidden = true;
     document.getElementById("tablaElementos").rows[numFila].children.item(9).firstChild.hidden = false;
@@ -298,6 +330,77 @@ function clickEditar() {
     //https://stackoverflow.com/questions/16177458/adding-a-button-with-onclick-function-via-javascript-jquery
     //https://www.w3schools.com/jsref/coll_table_rows.asp
 
+    //alert(document.getElementById("tablaElementos").rows[numFila].children.item(3).innerHTML);
+
+    //Cambiar td por input
+
+    //var docFrag = document.createDocumentFragment();
+    ////var input = document.createElement('input');
+    ////input.value = this.textContent;
+    ////this.removeChild(this.firstChild);
+    ////docFrag.appendChild(input);
+    ////this.appendChild(docFrag);
+
+
+    var fila = document.getElementById("tablaElementos").rows[numFila];
+
+    //editar que en vez de borrar los campos, los oculte, para volver a mostrarlos si se le da al boton cancelar
+    var inputNombre = document.createElement("input");
+    inputNombre.setAttribute("value", fila.children.item(1).innerHTML);
+    inputNombre.setAttribute("id", "inputNombre");
+    inputNombre.setAttribute("type", "text");
+    fila.children.item(1).removeChild(fila.children.item(1).firstChild);
+    fila.children.item(1).appendChild(inputNombre);
+
+    var inputApellido = document.createElement("input");
+    inputApellido.setAttribute("value", fila.children.item(2).innerHTML);
+    inputApellido.setAttribute("id", "inputApellido");
+    inputApellido.setAttribute("type", "text");
+    fila.children.item(2).removeChild(fila.children.item(2).firstChild);
+    fila.children.item(2).appendChild(inputApellido);
+
+    var inputFechaNac = document.createElement("input");
+    inputFechaNac.setAttribute("value", fila.children.item(3).innerHTML);
+    inputFechaNac.setAttribute("id", "inputFechaNac");
+    inputFechaNac.setAttribute("type", "datetime-local");
+    fila.children.item(3).removeChild(fila.children.item(3).firstChild);
+    fila.children.item(3).appendChild(inputFechaNac);
+
+    var inputDireccion = document.createElement("input");
+    inputDireccion.setAttribute("value", fila.children.item(4).innerHTML);
+    inputDireccion.setAttribute("id", "inputDireccion");
+    inputDireccion.setAttribute("type", "text");
+    fila.children.item(4).removeChild(fila.children.item(4).firstChild);
+    fila.children.item(4).appendChild(inputDireccion);
+
+    var inputTelefono = document.createElement("input");
+    inputTelefono.setAttribute("value", fila.children.item(5).innerHTML);
+    inputTelefono.setAttribute("id", "inputTelefono");
+    inputTelefono.setAttribute("type", "text");
+    fila.children.item(5).removeChild(fila.children.item(5).firstChild);
+    fila.children.item(5).appendChild(inputTelefono);
+
+    //todo: lista departamentos
+    //arrayNombres[i]["idDepartamento"]
+    //var arrayDepartamentos = obtenerListaDepartamentos();
+
+    var listaDepartamentos = document.createElement("select");
+    listaDepartamentos.setAttribute("id", "listaDepartamentos");
+
+    for (var i = 0; i < 4; i++)
+    {
+        var opcion = document.createElement("option");
+        var idDep = arrayDepartamentos[i]["idDepartamento"];
+        var nombre = arrayDepartamentos[i]["nombreDepartamento"];
+        //opcion.setAttribute("value", idDep);
+        //opcion.setAttribute("innerHTML", nombre);
+        opcion.value = idDep;
+        opcion.text = nombre;
+        //if (fila.children.item(6).innerHTML == nombre) opcion.setAttribute("selected", "true");
+        listaDepartamentos.appendChild(opcion);
+    }
+    fila.children.item(6).removeChild(fila.children.item(6).firstChild);
+    fila.children.item(6).appendChild(listaDepartamentos);
 }
 
 function CrearEventosOnClickEditar() {
