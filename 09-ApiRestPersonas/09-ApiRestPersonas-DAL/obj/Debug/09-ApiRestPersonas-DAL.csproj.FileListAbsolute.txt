@@ -7,3 +7,12 @@ D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.dll
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\bin\Debug\09-ApiRestPersonas-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\bin\Debug\09-ApiRestPersonas-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\bin\Debug\09-ApiRestPersonas-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\bin\Debug\09-ApiRestPersonas-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.csproj.CopyComplete
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-DAL\obj\Debug\09-ApiRestPersonas-DAL.pdb

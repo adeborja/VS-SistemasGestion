@@ -9,3 +9,14 @@ D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.csproj.CopyComplete
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.dll
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-BL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-BL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-DAL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-DAL.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\bin\Release\09-ApiRestPersonas-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.csproj.CopyComplete
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-BL\obj\Release\09-ApiRestPersonas-BL.pdb

@@ -12,7 +12,7 @@ namespace _09_ApiRestPersonas_API.Controllers
 {
     public class PersonasController : ApiController
     {
-        private object clsManejadoraPersonas_BL;
+        //private object clsManejadoraPersonas_BL;
 
         /// <summary>
         /// Verbo get para peticiones de un listado completo de personas
@@ -36,7 +36,7 @@ namespace _09_ApiRestPersonas_API.Controllers
         }
 
         /// <summary>
-        /// Verbo 
+        /// Verbo post para añadir una persona
         /// </summary>
         /// <param name="oPersona"></param>
         /// <returns></returns>
@@ -48,7 +48,7 @@ namespace _09_ApiRestPersonas_API.Controllers
         }
         
         /// <summary>
-        /// Verbo 
+        /// Verbo delete para borrar una persona por su id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -59,8 +59,19 @@ namespace _09_ApiRestPersonas_API.Controllers
             return filasAfectadas;
         }
 
+        /// <summary>
+        /// Verbo put para editar una persona
+        /// </summary>
+        /// <param name="oPersona"></param>
+        /// <returns></returns>
+        public int Put([FromBody]clsPersona oPersona)
+        {
+            clsManejadoraPersona_BL manejadoraPersonas_BL = new clsManejadoraPersona_BL();
+            int filasAfectadas = manejadoraPersonas_BL.editarPersona_BL(oPersona);
+            return filasAfectadas;
+        }
 
 
-        
+
     }
 }

@@ -4,3 +4,9 @@ D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidad
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.dll
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.pdb
 D:\Github Angel\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\bin\Release\09-ApiRestPersonas-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\bin\Release\09-ApiRestPersonas-Entidades.pdb
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.csprojAssemblyReference.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.csproj.CoreCompileInputs.cache
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.dll
+D:\Ciclo\GitHub\Repositorios\VS-SistemasGestion\09-ApiRestPersonas\09-ApiRestPersonas-Entidades\obj\Release\09-ApiRestPersonas-Entidades.pdb
