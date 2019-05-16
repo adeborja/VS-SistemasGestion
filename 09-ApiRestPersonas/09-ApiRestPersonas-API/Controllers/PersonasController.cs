@@ -64,7 +64,7 @@ namespace _09_ApiRestPersonas_API.Controllers
         /// </summary>
         /// <param name="oPersona"></param>
         /// <returns></returns>
-        public int Put([FromBody]clsPersona oPersona)
+        public int Put([FromBody]clsPersona oPersona) //Aqui se deberia añadir un parametro para que solo funcione put cuando se haga por ejemplo personas/1
         {
             clsManejadoraPersona_BL manejadoraPersonas_BL = new clsManejadoraPersona_BL();
             int filasAfectadas = manejadoraPersonas_BL.editarPersona_BL(oPersona);

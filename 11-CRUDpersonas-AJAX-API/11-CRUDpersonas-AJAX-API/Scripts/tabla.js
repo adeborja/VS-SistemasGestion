@@ -8,13 +8,6 @@ var urlDepartamentos = "https://apirestpersonasangel.azurewebsites.net/api/depar
 
 function inicializaEventos() {
     obtenerDatos();
-    //CrearEventosOnClickEditar();
-
-    //añadir eventos a los botones
-    //TODO
-    //document.getElementById("btnEditar").
-    
-    //alert('inicio');
 }
 
 
@@ -54,7 +47,7 @@ function obtenerDatos() {
 
                     generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos);
                     
-                    botonNuevaPersona();
+                    botonesNuevaPersona();
                 }
             };
 
@@ -576,14 +569,16 @@ function clickGuardar() {
     var clsPersona = function (id, nombre, apellido, fechaNac, direccion, telefono, idDep) {
         this.idPersona = id;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNac = fechaNac;
+        this.apellidos = apellido;
+        this.fechaNacimiento = fechaNac;
         this.direccion = direccion;
         this.telefono = telefono;
         this.idDepartamento = idDep;
     }
 
     var persona = new clsPersona(idPersona, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento);
+
+    //var array = [idPersona, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento];
 
     //Eliminar los textbox
     for (index = 0; index < 6; index++) {
@@ -614,11 +609,11 @@ function clickGuardar() {
     }
 
 
-    //llamadaPUT(persona);
+    llamadaPUT(persona);
 
     //Mensaje de test
-    var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
-    alert(msg);
+    //var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
+    //alert(msg);
 }
 
 
@@ -636,20 +631,24 @@ function CrearEventosOnClickGuardar() {
 
 function llamadaPUT(objeto) {
     var persona = JSON.stringify(objeto);
+    //var persona2 = JSON.stringify({"idPersona": "9","nombre": "PostmanStudio","apellido": "Prueba","fechaNac": "1987-11-08T00:00:00","direccion": "Calle Larga","telefono": "666777888","idDepartamento": "1"});
+    
 
     //generarTabla(arrayPersonas);//, arrayDepartamentos);
 
     var putPersona = new XMLHttpRequest();
 
-    putPersona.open("POST", urlPersonas);
-    putPersona.setRequestHeader('Content-type', 'application/json');
+    putPersona.open("PUT", urlPersonas, true);
+    putPersona.setRequestHeader('Content-Type', 'application/json');
 
     putPersona.onreadystatechange = function () {
         //alert(putPersona.onreadystatechange);
         console.log(putPersona.readyState);
 
-        if (putPersona.readyState == 4) {// && nombresDepartamento.status == 200) {
+        if (putPersona.readyState == 4) {// && putPersona.status == 200) {
             alert(putPersona.status);
+
+            //TODO: si el codigo es 200, cambiar los valores de los campos de la lista por los del textbox. Seguramente hay que mandar como parametro aqui numeroFila
         }
     };
 
@@ -728,72 +727,48 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
         switch (prop) {
             case "idPersona":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "idPersona");
+                itemCelda.setAttribute("id", "nIdPersona");
 
                 textoCelda = document.createTextNode("0");
-                //textoCelda.setAttribute("id", "idPersona");
 
                 break;
 
             case "nombre":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "nombre");
-
-                //textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                //textoCelda.setAttribute("id", "nombre");
+                itemCelda.setAttribute("id", "nNombre");
 
                 break;
 
             case "apellidos":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "apellidos");
-
-                //textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                //textoCelda.setAttribute("id", "apellidos");
+                itemCelda.setAttribute("id", "nApellidos");
+                
 
                 break;
 
             case "fechaNacimiento":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "fechaNacimiento");
-
-                //textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                //textoCelda.setAttribute("id", "fechaNacimiento");
+                itemCelda.setAttribute("id", "nFechaNacimiento");
+                itemCelda.setAttribute("type", "datetime-local");
 
                 break;
 
             case "direccion":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "direccion");
-
-                //textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                //textoCelda.setAttribute("id", "direccion");
+                itemCelda.setAttribute("id", "nDireccion");
 
                 break;
 
             case "telefono":
                 itemCelda = document.createElement("input");
-                itemCelda.setAttribute("id", "telefono");
-
-                //textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                //textoCelda.setAttribute("id", "telefono");
+                itemCelda.setAttribute("id", "nTelefono");
 
                 break;
 
             case "idDepartamento":
-
-                //itemCelda.setAttribute("id", "nombreDepartamento");
-
-                ////var aux = arrayPersonas[i]["idDepartamento"];
-                //textoCelda = document.createTextNode(buscarNombreDeDepartamento(arrayDepartamentos, 1));
-                ////textoCelda.setAttribute("id", "nombreDepartamento");
-
-
-
-
-
+                
                 listaDepartamentos = document.createElement("select");
-                listaDepartamentos.setAttribute("id", "listaDepartamentos");
+                listaDepartamentos.setAttribute("id", "nListaDepartamentos");
 
                 for (var i = 0; i < arrayDepartamentos.length; i++) {
                     var opcion = document.createElement("option");
@@ -822,9 +797,6 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
             celda.appendChild(listaDepartamentos);
         }
 
-        
-
-
         hilera.appendChild(celda);
     }
 
@@ -837,7 +809,7 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
     //txtGuardar.hidden = true;
     //txtGuardar.setAttribute("numerofila", i + 1);
-    txtGuardar.setAttribute("id", "btnGuardar");
+    txtGuardar.setAttribute("id", "btnGuardarNuevaPersona");
     txtGuardar.setAttribute("type", "button");
     txtGuardar.setAttribute("value", "Guardar");
     txtGuardar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
@@ -850,7 +822,7 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
     //txtCancelar.hidden = true;
     //txtCancelar.setAttribute("numerofila", i + 1);
-    txtCancelar.setAttribute("id", "btnCancelar");
+    txtCancelar.setAttribute("id", "btnCancelarNuevaPersona");
     txtCancelar.setAttribute("type", "button");
     txtCancelar.setAttribute("value", "Cancelar");
     txtCancelar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
@@ -901,22 +873,22 @@ function clickGuardarNuevaPersona() {
                 break;
             case 1:
                 //nombre = fila.children.item(index).children.item(1).innerHTML;
-                nombre = document.getElementById("inputNombre" + numeroFila).value;
+                nombre = document.getElementById("nNombre").value;
                 break;
             case 2:
-                apellido = document.getElementById("inputApellido" + numeroFila).value;
+                apellido = document.getElementById("nApellidos").value;
                 break;
             case 3:
-                fechaNacimiento = document.getElementById("inputFechaNac" + numeroFila).value;
+                fechaNacimiento = document.getElementById("nFechaNacimiento").value;
                 break;
             case 4:
-                direccion = document.getElementById("inputDireccion" + numeroFila).value;
+                direccion = document.getElementById("nDireccion").value;
                 break;
             case 5:
-                telefono = document.getElementById("inputTelefono" + numeroFila).value;
+                telefono = document.getElementById("nTelefono").value;
                 break;
             case 6:
-                var lista = document.getElementById("listaDepartamentos" + numeroFila);
+                var lista = document.getElementById("nListaDepartamentos");
 
                 idDepartamento = lista.options[lista.selectedIndex].value;
                 break;
@@ -928,54 +900,105 @@ function clickGuardarNuevaPersona() {
     }
 
     //Visibilidad de botones
-    fila.children.item(7).firstChild.hidden = false;
-    fila.children.item(8).firstChild.hidden = false;
-    fila.children.item(9).firstChild.hidden = true;
-    fila.children.item(10).firstChild.hidden = true;
+    //fila.children.item(7).firstChild.hidden = false;
+    //fila.children.item(8).firstChild.hidden = false;
+    //fila.children.item(9).firstChild.hidden = true;
+    //fila.children.item(10).firstChild.hidden = true;
 
 
     var clsPersona = function (id, nombre, apellido, fechaNac, direccion, telefono, idDep) {
         this.idPersona = id;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNac = fechaNac;
+        this.apellidos = apellido;
+        this.fechaNacimiento = fechaNac;
         this.direccion = direccion;
         this.telefono = telefono;
         this.idDepartamento = idDep;
     }
 
-    var persona = new clsPersona(idPersona, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento);
+    var persona = new clsPersona(0, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento);
 
-    //llamadaPUT(persona);
+    llamadaPOST(persona);
 
-    //Mensaje de test
-    var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
-    alert(msg);
+    //var msg = JSON.stringify(persona);
+    //alert(msg);
     
 }
 
-function CrearEventosOnClickGuardarNuevaPersona() {
-    var tabla = document.getElementById("tablaElementos");
-    var fila = null;
+//function CrearEventosOnClickGuardarNuevaPersona() {
+//    var tabla = document.getElementById("tablaElementos");
+//    var fila = null;
 
-    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
 
-        fila = tabla.rows[i];
-        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
-        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
+//        fila = tabla.rows[i];
+//        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
+//        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
 
-    }
-}
+//    }
+//}
 
 
 
-function botonNuevaPersona() {
+function botonesNuevaPersona() {
     var boton = document.getElementById("btnNuevo");
-    boton.addEventListener("click", visibilidadNuevaPersona, false);
+    boton.addEventListener("click", clickBotonNuevaPersona, false);
+
+    boton = document.getElementById("btnGuardarNuevaPersona");
+    boton.addEventListener("click", clickGuardarNuevaPersona, false);
+
+    boton = document.getElementById("btnCancelarNuevaPersona");
+    boton.addEventListener("click", clickCancelarNuevaPersona, false);
+    
 }
 
-function visibilidadNuevaPersona() {
+function visibilidadNuevaPersona(visible) {
     var barra = document.getElementById("barraNuevaPersona");
-    barra.hidden = false;
+    barra.hidden = visible;
 }
 
+function clickBotonNuevaPersona() {
+    visibilidadNuevaPersona(false);
+}
+
+function clickCancelarNuevaPersona() {
+    //alert("Llamada a cancelarPersona");
+
+    borrarCamposNuevaPersona();
+
+    visibilidadNuevaPersona(true);
+}
+
+function llamadaPOST(objeto) {
+    var persona = JSON.stringify(objeto);
+
+    var postPersona = new XMLHttpRequest();
+
+    postPersona.open("POST", urlPersonas, true);
+    postPersona.setRequestHeader('Content-Type', 'application/json');
+
+    postPersona.onreadystatechange = function () {
+        //alert(putPersona.onreadystatechange);
+        console.log(putPersona.readyState);
+
+        if (postPersona.readyState == 4) {// && putPersona.status == 200) {
+            alert(putPersona.status);
+        }
+    };
+
+    postPersona.send(persona);
+}
+
+
+function borrarCamposNuevaPersona() {
+    
+    document.getElementById("nNombre").value = "";
+    document.getElementById("nApellidos").value = "";
+    document.getElementById("nFechaNacimiento").value = "";
+    document.getElementById("nDireccion").value = "";
+    document.getElementById("nTelefono").value = "";
+
+    //var lista = document.getElementById("nListaDepartamentos");
+    //lista.options[lista.selectedIndex].value = 1;
+
+}
