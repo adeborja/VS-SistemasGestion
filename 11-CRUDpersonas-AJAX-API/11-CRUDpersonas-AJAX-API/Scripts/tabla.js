@@ -958,7 +958,16 @@ function visibilidadNuevaPersona(visible) {
 }
 
 function clickBotonNuevaPersona() {
-    visibilidadNuevaPersona(false);
+    //visibilidadNuevaPersona(false);
+
+    var barra = document.getElementById("barraNuevaPersona");
+
+    if (barra.hidden == true) {
+        visibilidadNuevaPersona(false);
+    }
+    else {
+        clickCancelarNuevaPersona();
+    }
 }
 
 function clickCancelarNuevaPersona() {
