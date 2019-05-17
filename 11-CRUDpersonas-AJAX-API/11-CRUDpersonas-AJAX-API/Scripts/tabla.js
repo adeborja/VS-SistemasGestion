@@ -2,7 +2,7 @@
 var posicionIdPersona = 0;
 var arrayDepartamentos;
 //var posicionIdDepartamento = 0;
-var lineaEditar = 1;
+//var lineaEditar = 1;
 var urlPersonas = "https://apirestpersonasangel.azurewebsites.net/api/personas";
 var urlDepartamentos = "https://apirestpersonasangel.azurewebsites.net/api/departamentos";
 
@@ -39,11 +39,13 @@ function obtenerDatos() {
 
                     generarTabla(arrayPersonas, arrayDepartamentos);
 
-                    CrearEventosOnClickEditar();
+                    //CrearEventosOnClickEditar();
 
-                    CrearEventosOnClickCancelar();
+                    //CrearEventosOnClickCancelar();
 
-                    CrearEventosOnClickGuardar();
+                    //CrearEventosOnClickGuardar();
+
+                    CrearEventosOnClick();
 
                     generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos);
                     
@@ -420,6 +422,8 @@ function clickEditar() {
     var listaDepartamentos = document.createElement("select");
     listaDepartamentos.setAttribute("id", "listaDepartamentos" + numeroFila);
 
+    var idSeleccionado;
+
     for (var i = 0; i < arrayDepartamentos.length; i++)
     {
         var opcion = document.createElement("option");
@@ -429,27 +433,40 @@ function clickEditar() {
         opcion.value = idDep;
         opcion.text = nombre;
 
-        listaDepartamentos.appendChild(opcion);
+        //if (nombre == fila.children.item(6).firstChild.innerHTML) idSeleccionado = idDep;
+        if (nombre == fila.children.item(6).firstChild.innerHTML) idSeleccionado = idDep -1;
+
+            listaDepartamentos.appendChild(opcion);
     }
+
+    //listaDepartamentos.options[listaDepartamentos.selectedIndex].value = idSeleccionado - 1;
+    listaDepartamentos.setAttribute("selectedIndex", idSeleccionado);
+
     //Para ocultar el elemento anterior
     fila.children.item(6).firstChild.hidden = true;
     fila.children.item(6).appendChild(listaDepartamentos);
 
-    lineaEditar++;
+    //lineaEditar++;
+
+    elegirOpcionPorDefectoLista("listaDepartamentos" + numeroFila, idSeleccionado);
 }
 
-function CrearEventosOnClickEditar() {
-    var tabla = document.getElementById("tablaElementos");
-    var fila = null;
+function elegirOpcionPorDefectoLista(idLista, idIndex) {
+    document.getElementById(idLista).selectedIndex = idIndex;
+}
 
-    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+//function CrearEventosOnClickEditar() {
+//    var tabla = document.getElementById("tablaElementos");
+//    var fila = null;
+
+//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
         
-        fila = tabla.rows[i];
-        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
-        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
+//        fila = tabla.rows[i];
+//        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
+//        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
 
-    }
-}
+//    }
+//}
 
 
 function clickCancelar() {
@@ -495,17 +512,17 @@ function clickCancelar() {
 }
 
 
-function CrearEventosOnClickCancelar() {
-    var tabla = document.getElementById("tablaElementos");
-    var fila = null;
+//function CrearEventosOnClickCancelar() {
+//    var tabla = document.getElementById("tablaElementos");
+//    var fila = null;
 
-    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
 
-        fila = tabla.rows[i];
-        fila.children.item(10).firstChild.addEventListener("click", clickCancelar, false);
+//        fila = tabla.rows[i];
+//        fila.children.item(10).firstChild.addEventListener("click", clickCancelar, false);
 
-    }
-}
+//    }
+//}
 
 
 function clickGuardar() {
@@ -609,7 +626,7 @@ function clickGuardar() {
     }
 
 
-    llamadaPUT(persona);
+    llamadaPUT(persona, numeroFila);
 
     //Mensaje de test
     //var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
@@ -617,24 +634,20 @@ function clickGuardar() {
 }
 
 
-function CrearEventosOnClickGuardar() {
-    var tabla = document.getElementById("tablaElementos");
-    var fila = null;
+//function CrearEventosOnClickGuardar() {
+//    var tabla = document.getElementById("tablaElementos");
+//    var fila = null;
 
-    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
 
-        fila = tabla.rows[i];
-        fila.children.item(9).firstChild.addEventListener("click", clickGuardar, false);
+//        fila = tabla.rows[i];
+//        fila.children.item(9).firstChild.addEventListener("click", clickGuardar, false);
 
-    }
-}
+//    }
+//}
 
-function llamadaPUT(objeto) {
+function llamadaPUT(objeto, numeroFila) {
     var persona = JSON.stringify(objeto);
-    //var persona2 = JSON.stringify({"idPersona": "9","nombre": "PostmanStudio","apellido": "Prueba","fechaNac": "1987-11-08T00:00:00","direccion": "Calle Larga","telefono": "666777888","idDepartamento": "1"});
-    
-
-    //generarTabla(arrayPersonas);//, arrayDepartamentos);
 
     var putPersona = new XMLHttpRequest();
 
@@ -642,23 +655,38 @@ function llamadaPUT(objeto) {
     putPersona.setRequestHeader('Content-Type', 'application/json');
 
     putPersona.onreadystatechange = function () {
-        //alert(putPersona.onreadystatechange);
-        console.log(putPersona.readyState);
 
-        if (putPersona.readyState == 4) {// && putPersona.status == 200) {
-            alert(putPersona.status);
+        if (putPersona.readyState == 4) {
 
-            //TODO: si el codigo es 200, cambiar los valores de los campos de la lista por los del textbox. Seguramente hay que mandar como parametro aqui numeroFila
+            if (putPersona.status == 200) {
+                actualizacionPersona(objeto, numeroFila);
+
+                alert("Persona actualizada");
+            }
+            else {
+                alert("Error al actualizar persona");
+            }
+
+            
         }
     };
 
     putPersona.send(persona);
 }
 
+function actualizacionPersona(objeto, numeroFila) {
+    var fila = document.getElementById("tablaElementos").rows[numeroFila];
+
+    fila.children.item(1).firstChild.innerHTML = objeto.nombre;
+    fila.children.item(2).firstChild.innerHTML = objeto.apellidos;
+    fila.children.item(3).firstChild.innerHTML = objeto.fechaNacimiento;
+    fila.children.item(4).firstChild.innerHTML = objeto.direccion;
+    fila.children.item(5).firstChild.innerHTML = objeto.telefono;
+    fila.children.item(6).firstChild.innerHTML = buscarNombreDeDepartamento(arrayDepartamentos, objeto.idDepartamento)
+}
+
 
 function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
-    //Obtener referencia del elemento Body
-    //var body = document.getElementsByTagName("body")[0];
 
     var div = document.getElementById("barraNuevaPersona");
 
@@ -839,8 +867,6 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
 
     div.appendChild(tabla);
-
-    //body.appendChild(div);
 }
 
 
@@ -987,11 +1013,19 @@ function llamadaPOST(objeto) {
     postPersona.setRequestHeader('Content-Type', 'application/json');
 
     postPersona.onreadystatechange = function () {
-        //alert(putPersona.onreadystatechange);
-        console.log(putPersona.readyState);
 
-        if (postPersona.readyState == 4) {// && putPersona.status == 200) {
-            alert(putPersona.status);
+        if (postPersona.readyState == 4) {
+
+            if (postPersona.status == 200) {
+                alert("Persona creada correctamente");
+                //TODO: añadir linea en tabla con la nueva persona
+                location.reload(true);
+            }
+            else {
+                alert("Error al crear persona");
+            }
+
+            clickCancelarNuevaPersona();
         }
     };
 
@@ -1006,8 +1040,121 @@ function borrarCamposNuevaPersona() {
     document.getElementById("nFechaNacimiento").value = "";
     document.getElementById("nDireccion").value = "";
     document.getElementById("nTelefono").value = "";
+    document.getElementById("nListaDepartamentos").selectedIndex = 0;
 
     //var lista = document.getElementById("nListaDepartamentos");
     //lista.options[lista.selectedIndex].value = 1;
 
+}
+
+function alertaConDosBotones(texto) {
+    var respuesta;
+
+    if (confirm(texto)) {
+        respuesta = true;
+    }
+    else {
+        respuesta = false;
+    }
+
+    return respuesta;
+}
+
+
+function CrearEventosOnClick() {
+    var tabla = document.getElementById("tablaElementos");
+    var fila = null;
+
+    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
+
+        fila = tabla.rows[i];
+        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
+        fila.children.item(8).firstChild.addEventListener("click", clickBorrar, false);
+        fila.children.item(9).firstChild.addEventListener("click", clickGuardar, false);
+        fila.children.item(10).firstChild.addEventListener("click", clickCancelar, false);
+    }
+}
+
+
+function clickBorrar() {
+
+    var respuesta = alertaConDosBotones("¿SEGURO QUE QUIERES BORRAR ESTA PERSONA? ESTA ACCIÓN NO PUEDE SER REVERTIDA.");
+
+    if (respuesta) {
+        var numeroFila = this.getAttribute("numerofila");
+
+        var fila = document.getElementById("tablaElementos").rows[numeroFila];
+
+        var idPersona = fila.children.item(0).firstChild.innerHTML;
+
+        //Eliminar los textbox
+        //for (index = 0; index < 6; index++) {
+        //    var aux;
+
+        //    switch (index) {
+        //        case 0:
+        //            aux = document.getElementById("inputNombre" + numeroFila);
+        //            break;
+        //        case 1:
+        //            aux = document.getElementById("inputApellido" + numeroFila);
+        //            break;
+        //        case 2:
+        //            aux = document.getElementById("inputFechaNac" + numeroFila);
+        //            break;
+        //        case 3:
+        //            aux = document.getElementById("inputDireccion" + numeroFila);
+        //            break;
+        //        case 4:
+        //            aux = document.getElementById("inputTelefono" + numeroFila);
+        //            break;
+        //        case 5:
+        //            aux = document.getElementById("listaDepartamentos" + numeroFila);
+        //            break;
+        //    }
+
+        //    aux.parentNode.removeChild(aux);
+        //}
+
+
+        llamadaDELETE(idPersona, numeroFila);
+        //borrarFilaDeTabla(numeroFila);
+
+        //Mensaje de test
+        //var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
+        //alert("Borrar persona con id: " + idPersona);
+    }
+
+}
+
+function llamadaDELETE(id, numeroFila) {
+
+    var deletePersona = new XMLHttpRequest();
+    var urlConId = urlPersonas + "/" + id;
+
+    deletePersona.open("DELETE", urlConId, true);
+    deletePersona.setRequestHeader('Content-Type', 'application/json');
+
+    deletePersona.onreadystatechange = function () {
+
+        if (deletePersona.readyState == 4) {
+
+            if (deletePersona.status == 200) {
+                alert("Persona borrada de la existencia correctamente");
+                
+                //TODO: borrar esa linea de la tabla
+                borrarFilaDeTabla(numeroFila);
+            }
+            else {
+                alert("Error al borrar persona");
+            }
+
+        }
+    };
+
+    deletePersona.send(id);
+}
+
+function borrarFilaDeTabla(numeroFila) {
+    var tabla = document.getElementById("tablaElementos");
+    tabla.deleteRow(numeroFila);
 }
