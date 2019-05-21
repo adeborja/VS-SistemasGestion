@@ -127,10 +127,11 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
     //Crea la hileras de la tabla para mostrar las claves
     var hilera = document.createElement("tr");
+    hilera.setAttribute("class", "row100 head");
 
     for (var i = 0; i < cols.length; i++) {
         var thh = document.createElement("th");
-        
+        thh.setAttribute("class", "cell100 column" + (i + 1));
 
         if (cols[i] == "idDepartamento") {
             textoTh = document.createTextNode("Departamento");
@@ -163,12 +164,14 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
         //Crea las hileras de la tabla
         hilera = document.createElement("tr"); //Se vuelve a crear la asignacion para limpiar la configuracion anterior. Comentar esta linea para ver por qué.
+        hilera.setAttribute("class", "row100 body");
         
         //Crear las columnas
         for (var prop in arrayPersonas[0]) {
             
             //Crea un elemento td
             var celda = document.createElement("td");
+            celda.setAttribute("class", "cell100 column" + (i + 1));
 
             //Crear aqui un elemento y que texto celda sea hija
             var itemCelda = document.createElement("p");
