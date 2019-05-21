@@ -169,6 +169,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
             
             //Crea un elemento td
             var celda = document.createElement("td");
+            celda.setAttribute("width", "15%");
 
             //Crear aqui un elemento y que texto celda sea hija
             var itemCelda = document.createElement("p");
@@ -743,6 +744,7 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
         //Crea un elemento td
         var celda = document.createElement("td");
+        celda.setAttribute("width", "15%");
 
         //Crear aqui un elemento input para el textbox
         var itemCelda = null;

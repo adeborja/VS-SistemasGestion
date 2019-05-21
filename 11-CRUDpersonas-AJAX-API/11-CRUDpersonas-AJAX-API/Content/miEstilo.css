@@ -2,3 +2,114 @@
 table th::first-letter {
     text-transform: uppercase;
 }
+
+
+#tablaElementos, #tablaNuevaPersona {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #tablaElementos td, #tablaElementos th, #tablaNuevaPersona td, #tablaNuevaPersona th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #tablaElementos tr:nth-child(even), #tablaNuevaPersona tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #tablaElementos tr:hover, #tablaNuevaPersona tr:hover {
+        background-color: #ddd;
+    }
+
+    #tablaElementos th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #tablaNuevaPersona th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #008CBA;
+        color: white;
+    }
+
+/* Verde */
+#btnGuardar, #btnGuardarNuevaPersona {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 900;
+}
+
+/* Azul */
+#btnNuevo, #btnEditar {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 900;
+}
+
+/* Rojo */
+#btnBorrar, #btnCancelar, #btnCancelarNuevaPersona {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight:900;
+}
+
+
+
+/*#btnNuevo, #btnEditar, #btnBorrar, #btnGuardarNuevaPersona, #btnCancelarNuevaPersona {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#btnGuardar, #btnCancelar {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}*/
