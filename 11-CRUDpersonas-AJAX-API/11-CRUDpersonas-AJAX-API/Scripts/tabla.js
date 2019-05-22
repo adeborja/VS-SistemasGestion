@@ -1,8 +1,6 @@
 ﻿window.onload = inicializaEventos;
 var posicionIdPersona = 0;
 var arrayDepartamentos;
-//var posicionIdDepartamento = 0;
-//var lineaEditar = 1;
 var urlPersonas = "https://apirestpersonasangel.azurewebsites.net/api/personas";
 var urlDepartamentos = "https://apirestpersonasangel.azurewebsites.net/api/departamentos";
 
@@ -14,7 +12,6 @@ function inicializaEventos() {
 function obtenerDatos() {
     
     var arrayPersonas;
-    //var arrayDepartamentos;
 
     var miLlamada = new XMLHttpRequest();
 
@@ -27,8 +24,6 @@ function obtenerDatos() {
             
             arrayPersonas = JSON.parse(miLlamada.responseText);
 
-            //generarTabla(arrayPersonas);//, arrayDepartamentos);
-
             var nombresDepartamento = new XMLHttpRequest();
 
             nombresDepartamento.open("GET", urlDepartamentos);
@@ -38,12 +33,6 @@ function obtenerDatos() {
                     arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
 
                     generarTabla(arrayPersonas, arrayDepartamentos);
-
-                    //CrearEventosOnClickEditar();
-
-                    //CrearEventosOnClickCancelar();
-
-                    //CrearEventosOnClickGuardar();
 
                     CrearEventosOnClick();
 
@@ -58,22 +47,6 @@ function obtenerDatos() {
     };
 
     miLlamada.send();
-
-    //CrearEventosOnClickEditar();
-
-    /*var nombresDepartamento = new XMLHttpRequest();
-
-    nombresDepartamento.open("GET", "https://apirestpersonasangel.azurewebsites.net/api/departamentos");
-
-    nombresDepartamento.onreadystatechange = function () {
-        if (nombresDepartamento.readyState == 4 && nombresDepartamento.status == 200) {
-            arrayDepartamentos = JSON.parse(nombresDepartamento.responseText);
-
-            generarTabla(arrayPersonas);
-        }
-    };
-    
-    nombresDepartamento.send();*/
 }
 
 function obtenerListaDepartamentos() {
@@ -89,8 +62,6 @@ function obtenerListaDepartamentos() {
             return arrayDepartamentos;
         }
     };
-
-    //nombresDepartamento.send();
 }
 
 function buscarNombreDeDepartamento(arrayNombres, idBuscado) {
@@ -162,7 +133,7 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
     for (var i = 0; i < arrayPersonas.length; i++) {
 
         //Crea las hileras de la tabla
-        hilera = document.createElement("tr"); //Se vuelve a crear la asignacion para limpiar la configuracion anterior. Comentar esta linea para ver por qué.
+        hilera = document.createElement("tr");
         
         //Crear las columnas
         for (var prop in arrayPersonas[0]) {
@@ -183,7 +154,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "idPersona" + (i + 1));
 
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "idPersona");
 
                     break;
 
@@ -192,7 +162,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "nombre" + (i+1));
                     
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "nombre");
 
                     break;
 
@@ -201,7 +170,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "apellidos" + (i + 1));
                     
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "apellidos");
 
                     break;
 
@@ -210,7 +178,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "fechaNacimiento" + (i + 1));
                     
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "fechaNacimiento");
 
                     break;
 
@@ -219,7 +186,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "direccion" + (i + 1));
                     
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "direccion");
 
                     break;
 
@@ -228,7 +194,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     itemCelda.setAttribute("id", "telefono" + (i + 1));
                     
                     textoCelda = document.createTextNode(arrayPersonas[i][prop]);
-                    //textoCelda.setAttribute("id", "telefono");
 
                     break;
 
@@ -238,7 +203,6 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
                     
                     var aux = arrayPersonas[i]["idDepartamento"];
                     textoCelda = document.createTextNode(buscarNombreDeDepartamento(arrayDepartamentos, aux));
-                    //textoCelda.setAttribute("id", "nombreDepartamento");
 
                     break;
 
@@ -268,13 +232,9 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
         txtEditar.setAttribute("type", "button");
         txtEditar.setAttribute("value", "Editar");
         txtEditar.setAttribute("class", "mdl-button mdl-js-button mdl-button--raised mdl-button--colored");
-
-        //da error porque intenta enlazar la fila cuando aun no se ha creado
-        //txtEditar.click(clickEditar(i));
+        
 
         btnEditar.appendChild(txtEditar);
-
-        //btnEditar.addEventListener("click", clickEditar(i), false);
         
         hilera.appendChild(btnEditar);
 
@@ -319,56 +279,24 @@ function generarTabla(arrayPersonas, arrayDepartamentos) {
 
         //agrega la hilera al final de la tabla (final del elemento tbody)
         tbody.appendChild(hilera);
-
-        //tbody.rows.item(i + 1).getElementById("btnEditar").addEventListener("click", clickEditar(i), false);
     }
-
-    //evento onclick de editar
-
-    /*var fila = null;
-
-    for (i = 0; i < tbody.rows.length; i++) {
-        //tbody.rows.item(i).txtEditar.click(clickEditar(this.numeroFila));
-        //tbody.rows.item(i).btnEditar.addEventListener("click", clickEditar(1), false);
-        //tbody.rows.item(i).getElementById("btnEditar").addEventListener("click", clickEditar(i), false);
-
-        fila = tbody.rows.item(i);
-        
-        //fila.children.item(7).innerHTML = "Edittttt";
-        fila.children.item(7).addEventListener("click", clickEditar(i), false);
-
-    }*/
-
+    
     //posicionar tbody debajo del elemento tabla
     tabla.appendChild(tbody);
 
-    //Borrar la columna idPersona de la tabla
-    /*var allRows = tabla.rows;
-    for(var x = 0; x < allRows.length; x++)
-    {
-        allRows[x].deleteCell(posicionIdPersona);
-    }*/
-
     body.appendChild(tabla);
-
-    //tabla.setAttribute("border", "4");
 }
 
 function clickEditar() {
     var numeroFila = this.getAttribute("numerofila");
-
-    //alert(numFila);
-
-    //se ha cambiado numeroFila por i+1
+    
+    
     //Cambia la visibilidad de los botones al hacer click en el boton de Editar
     document.getElementById("tablaElementos").rows[numeroFila].children.item(7).firstChild.hidden = true;
     document.getElementById("tablaElementos").rows[numeroFila].children.item(8).firstChild.hidden = true;
     document.getElementById("tablaElementos").rows[numeroFila].children.item(9).firstChild.hidden = false;
     document.getElementById("tablaElementos").rows[numeroFila].children.item(10).firstChild.hidden = false;
-
-
-    //https://stackoverflow.com/questions/16177458/adding-a-button-with-onclick-function-via-javascript-jquery
-    //https://www.w3schools.com/jsref/coll_table_rows.asp
+    
 
 
     var fila = document.getElementById("tablaElementos").rows[numeroFila];
@@ -378,9 +306,7 @@ function clickEditar() {
     inputNombre.setAttribute("value", fila.children.item(1).firstChild.innerHTML);
     inputNombre.setAttribute("id", "inputNombre" + numeroFila);
     inputNombre.setAttribute("type", "text");
-
-    //Para borrar el elemento anterior
-    //fila.children.item(1).removeChild(fila.children.item(1).firstChild);
+    
 
     //Para ocultar el elemento anterior
     fila.children.item(1).firstChild.hidden = true;
@@ -433,21 +359,18 @@ function clickEditar() {
 
         opcion.value = idDep;
         opcion.text = nombre;
-
-        //if (nombre == fila.children.item(6).firstChild.innerHTML) idSeleccionado = idDep;
+        
         if (nombre == fila.children.item(6).firstChild.innerHTML) idSeleccionado = idDep -1;
 
             listaDepartamentos.appendChild(opcion);
     }
-
-    //listaDepartamentos.options[listaDepartamentos.selectedIndex].value = idSeleccionado - 1;
+    
     listaDepartamentos.setAttribute("selectedIndex", idSeleccionado);
 
     //Para ocultar el elemento anterior
     fila.children.item(6).firstChild.hidden = true;
     fila.children.item(6).appendChild(listaDepartamentos);
-
-    //lineaEditar++;
+    
 
     elegirOpcionPorDefectoLista("listaDepartamentos" + numeroFila, idSeleccionado);
 }
@@ -455,19 +378,6 @@ function clickEditar() {
 function elegirOpcionPorDefectoLista(idLista, idIndex) {
     document.getElementById(idLista).selectedIndex = idIndex;
 }
-
-//function CrearEventosOnClickEditar() {
-//    var tabla = document.getElementById("tablaElementos");
-//    var fila = null;
-
-//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
-        
-//        fila = tabla.rows[i];
-//        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
-//        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
-
-//    }
-//}
 
 
 function clickCancelar() {
@@ -513,17 +423,6 @@ function clickCancelar() {
 }
 
 
-//function CrearEventosOnClickCancelar() {
-//    var tabla = document.getElementById("tablaElementos");
-//    var fila = null;
-
-//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
-
-//        fila = tabla.rows[i];
-//        fila.children.item(10).firstChild.addEventListener("click", clickCancelar, false);
-
-//    }
-//}
 
 
 function clickGuardar() {
@@ -543,12 +442,9 @@ function clickGuardar() {
 
         switch (index) {
             case 0:
-                //idPersona = document.getElementById("inputNombre" + numeroFila);
-                idPersona = fila.children.item(index).firstChild.innerHTML; //Peta porque en este momento no existe este elemento.
-                                                    //Solucion: crear los boxes donde se edita los datos de la persona
+                idPersona = fila.children.item(index).firstChild.innerHTML;
                 break;
             case 1:
-                //nombre = fila.children.item(index).children.item(1).innerHTML;
                 nombre = document.getElementById("inputNombre" + numeroFila).value;
                 break;
             case 2:
@@ -571,8 +467,7 @@ function clickGuardar() {
         }
 
         if(index>0) fila.children.item(index).firstChild.hidden = false;
-
-        //item.parentNode.removeChild(item);
+        
     }
 
     //Visibilidad de botones
@@ -595,8 +490,7 @@ function clickGuardar() {
     }
 
     var persona = new clsPersona(idPersona, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento);
-
-    //var array = [idPersona, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento];
+    
 
     //Eliminar los textbox
     for (index = 0; index < 6; index++) {
@@ -628,31 +522,16 @@ function clickGuardar() {
 
 
     llamadaPUT(persona, numeroFila);
-
-    //Mensaje de test
-    //var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
-    //alert(msg);
 }
 
 
-//function CrearEventosOnClickGuardar() {
-//    var tabla = document.getElementById("tablaElementos");
-//    var fila = null;
-
-//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
-
-//        fila = tabla.rows[i];
-//        fila.children.item(9).firstChild.addEventListener("click", clickGuardar, false);
-
-//    }
-//}
 
 function llamadaPUT(objeto, numeroFila) {
     var persona = JSON.stringify(objeto);
 
     var putPersona = new XMLHttpRequest();
 
-    putPersona.open("PUT", urlPersonas, true);
+    putPersona.open("PUT", urlPersonas + "/" + objeto.idPersona, true);
     putPersona.setRequestHeader('Content-Type', 'application/json');
 
     putPersona.onreadystatechange = function () {
@@ -836,9 +715,7 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
     //Añadir los botones necesarios
     var btnGuardar = document.createElement("tr");
     var txtGuardar = document.createElement("input");
-
-    //txtGuardar.hidden = true;
-    //txtGuardar.setAttribute("numerofila", i + 1);
+    
     txtGuardar.setAttribute("id", "btnGuardarNuevaPersona");
     txtGuardar.setAttribute("type", "button");
     txtGuardar.setAttribute("value", "Guardar");
@@ -849,9 +726,7 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
     var btnCancelar = document.createElement("tr");
     var txtCancelar = document.createElement("input");
-
-    //txtCancelar.hidden = true;
-    //txtCancelar.setAttribute("numerofila", i + 1);
+    
     txtCancelar.setAttribute("id", "btnCancelarNuevaPersona");
     txtCancelar.setAttribute("type", "button");
     txtCancelar.setAttribute("value", "Cancelar");
@@ -873,13 +748,8 @@ function generarTablaNuevaPersona(arrayPersonas, arrayDepartamentos) {
 
 
 function clickGuardarNuevaPersona() {
-
-    //No ocultar ni refrescar la pagina, si da error se da un aviso, y si se hace bien refrescar la pagina
-
+    
     //Recoger los datos de los campos
-
-
-    //var numeroFila = this.getAttribute("numerofila");
 
     var fila = document.getElementById("tablaNuevaPersona").children.item(1).firstChild;
 
@@ -895,12 +765,9 @@ function clickGuardarNuevaPersona() {
 
         switch (index) {
             case 0:
-                //idPersona = document.getElementById("inputNombre" + numeroFila);
-                idPersona = fila.children.item(index).firstChild.innerHTML; //Peta porque en este momento no existe este elemento.
-                //Solucion: crear los boxes donde se edita los datos de la persona
+                idPersona = fila.children.item(index).firstChild.innerHTML;
                 break;
             case 1:
-                //nombre = fila.children.item(index).children.item(1).innerHTML;
                 nombre = document.getElementById("nNombre").value;
                 break;
             case 2:
@@ -923,15 +790,8 @@ function clickGuardarNuevaPersona() {
         }
 
         if (index > 0) fila.children.item(index).firstChild.hidden = false;
-
-        //item.parentNode.removeChild(item);
+        
     }
-
-    //Visibilidad de botones
-    //fila.children.item(7).firstChild.hidden = false;
-    //fila.children.item(8).firstChild.hidden = false;
-    //fila.children.item(9).firstChild.hidden = true;
-    //fila.children.item(10).firstChild.hidden = true;
 
 
     var clsPersona = function (id, nombre, apellido, fechaNac, direccion, telefono, idDep) {
@@ -947,24 +807,7 @@ function clickGuardarNuevaPersona() {
     var persona = new clsPersona(0, nombre, apellido, fechaNacimiento, direccion, telefono, idDepartamento);
 
     llamadaPOST(persona);
-
-    //var msg = JSON.stringify(persona);
-    //alert(msg);
-    
 }
-
-//function CrearEventosOnClickGuardarNuevaPersona() {
-//    var tabla = document.getElementById("tablaElementos");
-//    var fila = null;
-
-//    for (i = 1; i <= tabla.children.item(1).children.length; i++) {
-
-//        fila = tabla.rows[i];
-//        //var numeroFila = fila.children.item(7).firstChild.numeroFila;
-//        fila.children.item(7).firstChild.addEventListener("click", clickEditar, false);
-
-//    }
-//}
 
 
 
@@ -1043,10 +886,6 @@ function borrarCamposNuevaPersona() {
     document.getElementById("nDireccion").value = "";
     document.getElementById("nTelefono").value = "";
     document.getElementById("nListaDepartamentos").selectedIndex = 0;
-
-    //var lista = document.getElementById("nListaDepartamentos");
-    //lista.options[lista.selectedIndex].value = 1;
-
 }
 
 function alertaConDosBotones(texto) {
@@ -1089,41 +928,8 @@ function clickBorrar() {
 
         var idPersona = fila.children.item(0).firstChild.innerHTML;
 
-        //Eliminar los textbox
-        //for (index = 0; index < 6; index++) {
-        //    var aux;
-
-        //    switch (index) {
-        //        case 0:
-        //            aux = document.getElementById("inputNombre" + numeroFila);
-        //            break;
-        //        case 1:
-        //            aux = document.getElementById("inputApellido" + numeroFila);
-        //            break;
-        //        case 2:
-        //            aux = document.getElementById("inputFechaNac" + numeroFila);
-        //            break;
-        //        case 3:
-        //            aux = document.getElementById("inputDireccion" + numeroFila);
-        //            break;
-        //        case 4:
-        //            aux = document.getElementById("inputTelefono" + numeroFila);
-        //            break;
-        //        case 5:
-        //            aux = document.getElementById("listaDepartamentos" + numeroFila);
-        //            break;
-        //    }
-
-        //    aux.parentNode.removeChild(aux);
-        //}
-
 
         llamadaDELETE(idPersona, numeroFila);
-        //borrarFilaDeTabla(numeroFila);
-
-        //Mensaje de test
-        //var msg = idPersona + ", " + nombre + ", " + apellido + ", " + fechaNacimiento + ",  " + direccion + ", " + telefono + ", " + idDepartamento;
-        //alert("Borrar persona con id: " + idPersona);
     }
 
 }
@@ -1143,7 +949,7 @@ function llamadaDELETE(id, numeroFila) {
             if (deletePersona.status == 200) {
                 alert("Persona borrada de la existencia correctamente");
                 
-                //TODO: borrar esa linea de la tabla
+                //borrar esa linea de la tabla
                 borrarFilaDeTabla(numeroFila);
             }
             else {
